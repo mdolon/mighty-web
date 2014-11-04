@@ -1,0 +1,253 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "compass";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+#header {
+  position: relative;
+  background: #e35b3a;
+  overflow: hidden;
+  .navbar {
+    padding: 40px 0 0;
+    min-height: 90px;
+    background: none;  border-width: 0;
+    #bgvid {
+      display: block;
+      position: absolute;
+      top: 0;  left: 0;  right: 0;  bottom: 0;
+      width: 100%;
+      z-index: 1;
+    }
+    .navbar-header, .navbar-collapse {
+      position: relative;
+    }
+    .navbar-header {
+      z-index: 3;
+      .navbar-brand {
+        position: relative;
+        top: -25px;
+        height: 85px;
+      }
+      .navbar-toggle {
+        border-color: #ff9d36;
+        &:hover, &:focus, &:active {
+          background-color: #ff5d19;
+        }
+        .icon-bar {
+          background: #fff;
+        }
+      }
+    }
+    .navbar-collapse {
+      z-index: 2;
+      &.in, &.collapsing {
+        background: #ba533a;
+      }
+      a, .btn-default {
+        color: #fff;
+        font-weight: bold;
+      }
+      .btn-default {
+        margin-left: 20px;
+        background: none;
+        border-width: 2px;
+        border-color: #fff;
+      }
+    }
+  }
+  .jumbotron {
+    padding: 0 !important;  margin: 0 !important;
+    background: none !important;
+    color: #fff;
+    .container {
+      max-height: 350px;
+      overflow: hidden;
+      img {
+        position: relative;
+        top: -40px;
+      }
+      h1 {
+        font-weight: normal;
+        margin: 0;
+      }
+      .typed-cont {
+        margin: 5px 0 15px;
+        h1 {
+          @include border-radius(3px);
+          @include background-image(linear-gradient(to right, #ba533a, #e35b3a));
+          padding: 3px 8px;  margin-left: -8px;  margin-right: -8px;
+          font-weight: bold;
+        }
+      }
+      p {
+        margin-bottom: 40px;
+        span {
+          border-bottom: 1px dotted #fff;
+          font-weight: bold;
+        }
+      }
+      .btn {
+        padding: 12px 20px;
+        background: #fff;  border: none;
+        font-weight: bold;  font-size: 15px;  text-transform: uppercase;  color: #e35b3a;
+        margin-bottom: 30px;
+        &:hover {
+          background: #eee;
+        }
+      }
+    }
+  }
+}
+
+.secondary {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.trainers {
+  padding: 40px 0 20px;
+  background: #fafafa;
+  > .container > h3 {
+    text-align: center;
+    margin: 0 0 20px;
+    span {
+      color: #bf3f3f;
+      border-bottom: 1px dotted #bf3f3f;
+    }
+  }
+  a {
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+  .panel {
+    @include transition(all 100ms linear);
+    @include box-shadow(rgba(0,0,0,0.1) 0 0 5px, rgba(0,0,0,0.2) 0 2px 3px);
+    border: none;
+    color: #444;
+    cursor: pointer;
+    &:hover {
+      @include box-shadow(rgba(0,0,0,0.25) 0 0 7px, rgba(0,0,0,0.2) 0 2px 5px);
+    }
+    .panel-heading {
+      position: relative;
+      overflow: hidden;
+      min-height: 130px;
+      background: image-url("trainer-sample1.jpg") no-repeat top center;
+      background-size: cover;
+      border: none;
+      h3 {
+        position: absolute;
+        bottom: 0;  left: 0;  right: 0;
+        margin: 0;  padding: 10px;
+        min-height: 40px;
+        color: #fff;
+        z-index: 3;
+        background: image-url("bg-text_scrim.png") repeat-x top;
+      }
+    }
+    .panel-body {
+      p {
+        margin-bottom: 0;
+      }
+    }
+    .panel-footer {
+      .price {
+        font-size: 24px;
+        span {
+          font-size: 18px;
+        }
+      }
+      .rating {
+        padding: 0;  margin: 5px 0 0;
+        li {
+          margin: 0;  padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.testimonials {
+  padding: 40px 0;
+  background: #aaa;
+  .panel-primary {
+    border-color: #888;
+  }
+  .quote {
+    text-align: center;
+    color: #fff;
+    em {
+      display: block;
+      margin-bottom: 15px;
+      font-size: 26px;
+    }
+    strong {
+      display: block;
+      color: #ddd;
+      font-size: 20px;  font-weight: normal;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.footer {
+  padding: 20px 0;
+  background: #444;
+  color: #ccc;
+  strong {
+    color: #fff;
+  }
+  ul {
+    margin-bottom: 0;
+    li {
+      margin-left: 20px;
+    }
+  }
+  a {
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}

@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
-
-gem 'capistrano-rails', group: :development
+gem 'autoprefixer-rails'
+gem 'capistrano',  '~> 3.1'
+gem 'capistrano-rails', '~> 1.1'
+gem 'bootstrap-sass', '~> 3.3.0'
+gem 'compass'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'compass-rails'
 gem 'devise'

@@ -1,0 +1,38 @@
+#header.clearfix
+  %nav.navbar.navbar-default{:role => "navigation"}
+    .container
+      .navbar-header
+        %button.navbar-toggle.collapsed{"data-target" => "#header-nav", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => "#"}
+          %img{:src => asset_url("logo.png")}/
+      #header-nav.collapse.navbar-collapse
+        %button.btn.btn-default.navbar-btn.navbar-right.hidden-xs{:type => "button"} Sign in
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a{:href => "/learn"} Search Classes
+          %li
+            %a{:href => "/instruct"} Become an Instructor
+          %li.hidden-sm.hidden-md.hidden-lg
+            %a{:href => "#"} Sign In
+      /
+        <video autoplay loop poster="/images/fitness-new.jpg" id="bgvid">
+        <source src="/images/fitness-new.webm" type="video/webm">
+        <source src="/images/fitness-new.mp4" type="video/mp4">
+        </video>
+  .jumbotron
+    .container
+      %img.pull-right.hidden-xs.hidden-sm{:src => asset_url("phones.png")}/
+      %h1
+        %span.hidden-md> Real-World
+        Classes In
+      .typed-cont
+        %h1
+          %span.typed
+      %p.lead
+        %span Mighty
+        lets you find affordable classes taught by experienced professionals living in your neighborhood.
+      %a.btn.btn-warning.btn-lg{:href => "#", :role => "button"} Learn more &raquo;
