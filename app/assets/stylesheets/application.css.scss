@@ -62,6 +62,9 @@ h1, h2, h3, h4, h5, h6 {
       z-index: 2;
       &.in, &.collapsing {
         background: #ba533a;
+        li a:hover {
+          background: #ce5d41;
+        }
       }
       a, .btn-default {
         color: #fff;
@@ -75,45 +78,46 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
   }
-  .jumbotron {
-    padding: 0 !important;  margin: 0 !important;
-    background: none !important;
-    color: #fff;
-    .container {
-      max-height: 350px;
-      overflow: hidden;
-      img {
-        position: relative;
-        top: -40px;
-      }
+}
+
+.jumbotron {
+  padding: 0 !important;  margin: 0 !important;
+  background: #e35b3a;
+  color: #fff;
+  .container {
+    max-height: 350px;
+    overflow: hidden;
+    img {
+      position: relative;
+      top: -40px;
+    }
+    h1 {
+      font-weight: normal;
+      margin: 0;
+    }
+    .typed-cont {
+      margin: 5px 0 15px;
       h1 {
-        font-weight: normal;
-        margin: 0;
+        @include border-radius(3px);
+        @include background-image(linear-gradient(to right, #ba533a, #e35b3a));
+        padding: 3px 8px;  margin-left: -8px;  margin-right: -8px;
+        font-weight: bold;
       }
-      .typed-cont {
-        margin: 5px 0 15px;
-        h1 {
-          @include border-radius(3px);
-          @include background-image(linear-gradient(to right, #ba533a, #e35b3a));
-          padding: 3px 8px;  margin-left: -8px;  margin-right: -8px;
-          font-weight: bold;
-        }
+    }
+    p {
+      margin-bottom: 40px;
+      span {
+        border-bottom: 1px dotted #fff;
+        font-weight: bold;
       }
-      p {
-        margin-bottom: 40px;
-        span {
-          border-bottom: 1px dotted #fff;
-          font-weight: bold;
-        }
-      }
-      .btn {
-        padding: 12px 20px;
-        background: #fff;  border: none;
-        font-weight: bold;  font-size: 15px;  text-transform: uppercase;  color: #e35b3a;
-        margin-bottom: 30px;
-        &:hover {
-          background: #eee;
-        }
+    }
+    .btn {
+      padding: 12px 20px;
+      background: #fff;  border: none;
+      font-weight: bold;  font-size: 15px;  text-transform: uppercase;  color: #e35b3a;
+      margin-bottom: 30px;
+      &:hover {
+        background: #eee;
       }
     }
   }
