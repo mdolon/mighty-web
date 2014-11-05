@@ -4,9 +4,9 @@
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{deploybot}
-role :web, %w{deploybot}
-role :db,  %w{deploybot}
+# role :app, %w{deploybot}
+# role :web, %w{deploybot}
+# role :db,  %w{deploybot}
 
 
 # Extended Server Syntax
@@ -15,7 +15,8 @@ role :db,  %w{deploybot}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'staging.mightyapp.co', user: 'deploybot', roles: %w{web app}, my_property: :my_value
+server '66.228.35.90', user: 'deploybot', roles: %w{web app}, my_property: :my_value
+set :deploy_to, '/home/deploybot/www/staging'
 
 
 # Custom SSH Options
