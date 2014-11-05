@@ -2,6 +2,7 @@
 lock '3.2.1'
 
 set :application, 'mighty'
+set :user, 'deploybot'
 set :repo_url, 'git@github.com:mdolon/mighty-web.git'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
