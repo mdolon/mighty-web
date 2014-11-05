@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'autoprefixer-rails'
-gem 'capistrano',  '~> 3.1'
-gem 'capistrano-rails', '~> 1.1'
-gem 'capistrano-rvm'
-gem 'capistrano3-puma'
+gem 'capistrano',         require: false
+gem 'capistrano-rvm',     require: false
+gem 'capistrano-rails',   require: false
+gem 'capistrano-bundler', require: false
+gem 'capistrano3-puma',   require: false
 gem 'bootstrap-sass', '~> 3.3.0'
 gem 'compass'
 gem 'coffee-rails', '~> 4.0.0'

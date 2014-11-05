@@ -16,7 +16,7 @@
 # used to set extended properties on the server.
 
 server '66.228.35.90', user: 'deploybot', roles: %w{web app}, my_property: :my_value
-set :deploy_to, '/home/deploybot/www/production'
+set :deploy_to, '/home/deploybot/apps/mighty'
 
 
 # Custom SSH Options
