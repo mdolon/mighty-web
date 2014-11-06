@@ -45,7 +45,7 @@ $ ->
     pulse: () ->
       timesRun = 0
       interval = setInterval(->
-        if timesRun is 3
+        if timesRun is 2
           clearInterval interval
           $(".slide-fx").remove()
           return
@@ -64,10 +64,12 @@ $ ->
 
   slider.resetSize()
   setTimeout slider.pulse, 1000
+  interval2 = setInterval slider.pulse, 8000
 
   $(window).on 'resize', slider.resetSize
 
   $(".leadgen .slide.objective a.objective-link").click (ev) ->
+    clearInterval interval2
     $(".objective-link").removeClass("active")
     $(@).addClass("active")
     name = $(@).data("name")
