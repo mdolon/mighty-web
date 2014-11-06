@@ -18,8 +18,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$darker-color: #05468f;
-$primary-color: #0653a9;
+$primary-color: #054ba6;
+$darker-color: #063e86;
+
+body {
+  background: $primary-color image-url("bg-blue.png");
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
@@ -42,9 +46,9 @@ p {
 
 
 #header {
-  background: $darker-color;
   position: relative;
   overflow: hidden;
+  background: rgba(9,47,97,0.3);
   .navbar {
     padding: 5px 0 0;  margin: 0;
     background: none;  border-width: 0;
@@ -118,7 +122,6 @@ p {
 
 .leadgen {
   padding: 40px 0;
-  background: $primary-color;
   .container {
     background: image-url("bg-dots.png") no-repeat bottom center;
     > .row {
@@ -263,6 +266,7 @@ p {
 .secondary {
   position: relative;
   padding: 60px 0;
+  background: #fff;
   .title {
     margin: 0 auto;
     text-align: center;
