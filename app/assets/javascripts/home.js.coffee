@@ -17,50 +17,72 @@ $ ->
 
   num_slides = $(".slide").length
 
-  sliderResetSize = () =>
-    slide_width = $(".leadgen .slide-wrap").width()
-    current_slide = $(".slide.current")
-    position = $(".slide").index(current_slide) + 1
-    offset = (position*slide_width)-slide_width
-    $(".leadgen .slide").css("width", slide_width).show()
-    $(".leadgen .slide-wrap").css("height", current_slide.height())
-    $(".leadgen .slide-strip").css("width", slide_width*num_slides)
-    $(".leadgen .slide-strip").css("left", -offset)
-
-  slide = (action) => 
-    current_slide = $(".slide.current")
-    target_slide = if action == "next" then current_slide.next() else current_slide.prev()
-    if target_slide.length
-      current_slide.removeClass("current")
-      target_slide.addClass("current")
+  slider =
+    resetSize: () =>
       slide_width = $(".leadgen .slide-wrap").width()
-      $(".leadgen .slide-strip").animate
-        left: "+=" + (if action == "next" then -slide_width else slide_width)
-      , 500
-      $(".leadgen .slide-wrap").animate
-        height: target_slide.height()
-      , 500
+      current_slide = $(".slide.current")
+      position = $(".slide").index(current_slide) + 1
+      offset = (position*slide_width)-slide_width
+      $(".leadgen .slide").css("width", slide_width).show()
+      $(".leadgen .slide-wrap").css("height", current_slide.height())
+      $(".leadgen .slide-strip").css("width", slide_width*num_slides)
+      $(".leadgen .slide-strip").css("left", -offset)
 
-  sliderResetSize()
+    slide: (action) => 
+      current_slide = $(".slide.current")
+      target_slide = if action == "next" then current_slide.next() else current_slide.prev()
+      if target_slide.length
+        current_slide.removeClass("current")
+        target_slide.addClass("current")
+        slide_width = $(".leadgen .slide-wrap").width()
+        $(".leadgen .slide-strip").animate
+          left: "+=" + (if action == "next" then -slide_width else slide_width)
+        , 500
+        $(".leadgen .slide-wrap").animate
+          height: target_slide.height()
+        , 500
 
-  $(window).on 'resize', sliderResetSize
+    pulse: () ->
+      timesRun = 0
+      interval = setInterval(->
+        if timesRun is 3
+          clearInterval interval
+          $(".slide-fx").remove()
+          return
+        slide = $("<div class='slide-fx panel'></div>")
+        $(".slide-cont").append slide
+        slide.animate
+          top: -15
+          left: -15
+          right: -15
+          bottom: -15
+          opacity: 0
+        , 300
+        timesRun++
+      , 200)
 
-  $(".leadgen .slide.objective .objective-link").click (ev) =>
+
+  slider.resetSize()
+  setTimeout slider.pulse, 1000
+
+  $(window).on 'resize', slider.resetSize
+
+  $(".leadgen .slide.objective a.objective-link").click (ev) =>
     $(".objective-link").removeClass("active")
-    link = if $(ev.target).hasClass("objective-link") then $(ev.target) else $(ev.target).parents("a")
-    link.addClass("active")
-    name = $(link).data("name")
-    value = $(link).data("value")
+    $(@).addClass("active")
+    name = $(@).data("name")
+    value = $(@).data("value")
     $(".leadgen .slide.personalize .panel-heading span").text(name)
     setTimeout () =>
-      slide("next")
+      slider.slide("next")
     , 250
     ev.preventDefault()
 
-  $(".leadgen .slide.personalize .prev-slide").click (ev) =>
-    slide("prev")
+
+  $(".leadgen .slide.personalize .prev-slide").click (ev) ->
+    slider.slide("prev")
     ev.preventDefault()
 
-  $("#find-trainer-form").submit (ev) =>
-    slide("next")
+  $("#find-trainer-form").submit (ev) ->
+    slider.slide("next")
     ev.preventDefault()

@@ -139,15 +139,6 @@ p {
         padding: 3px 8px;  margin: 0 -8px 15px;
         font-weight: bold;
       }
-      // .typed-cont {
-      //   margin: 5px 0 15px;
-      //   h2 {
-      //     @include border-radius(3px);
-      //     @include background-image(linear-gradient(to right, #247ebe, $primary-color));
-      //     padding: 3px 8px;  margin-left: -8px;  margin-right: -8px;
-      //     font-weight: bold;
-      //   }
-      // }
       p {
         margin-bottom: 20px;
         span {
@@ -156,9 +147,19 @@ p {
         }
       }
     }
+    .slide-fx {
+      position: absolute;
+      z-index: 2;
+      top: 0;  left: 0;  right: 0;  bottom: 0;
+      margin: 0 15px;
+      border: 2px solid #7faeec;
+      background: transparent;
+    }
     .slide-wrap {
-      width: 100%;
+      position: relative;
       overflow: hidden;
+      width: 100%;
+      z-index: 3;
       .slide-strip {
         position: relative;
       }
@@ -275,7 +276,7 @@ p {
     }
   }
   .feature {
-    padding: 30px 0;
+    padding: 50px 0;
     border-top: 1px solid #ddd;
     &.first {
       border-top: none;
