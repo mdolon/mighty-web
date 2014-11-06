@@ -1,0 +1,7 @@
+.container.simple-page
+  .panel
+    .panel-heading
+      %h1 New Lead
+    .panel-body
+      = render 'form'
+      = link_to raw('&laquo Back'), leads_path, class: "btn btn-sm btn-link"

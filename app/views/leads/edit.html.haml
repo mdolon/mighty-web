@@ -1,0 +1,8 @@
+.container.simple-page
+  .panel
+    .panel-heading
+      = link_to raw('Show Lead'), @lead, class: "btn btn-sm btn-success pull-right"
+      %h1 Edit Lead
+    .panel-body
+      = render 'form'
+      = link_to raw('&laquo Back'), leads_path, class: "btn btn-sm btn-link"

@@ -1,0 +1,29 @@
+= form_for(@lead, role: "form") do |f|
+  - if @lead.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@lead.errors.count, "error")
+        prohibited this lead from being saved:
+      %ul
+        - @lead.errors.full_messages.each do |message|
+          %li= message
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: "form-control"
+  .form-group
+    = f.label :objective
+    = f.text_field :objective, class: "form-control"
+  .form-group
+    = f.label :activities
+    = f.text_field :activities, class: "form-control"
+  .form-group
+    = f.label :pricepoint
+    = f.text_field :pricepoint, class: "form-control"
+  .form-group
+    = f.label :email
+    = f.text_field :email, class: "form-control"
+  .form-group
+    = f.label :startdate
+    = f.text_field :startdate, class: "form-control"
+  .form-group
+    = f.submit 'Save', class: "btn btn-large btn-primary"

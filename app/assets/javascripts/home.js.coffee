@@ -61,6 +61,16 @@ $ ->
         timesRun++
       , 200)
 
+  setActivities = () =>
+    activities_list = []
+    $(".activities .label").each (index, obj) =>
+      if $(obj).hasClass("active")
+        activities_list.push($(obj).text())
+    $("input#activities").val(activities_list.join(', '))
+
+  form_warning = (message) ->
+    $(".form-alerts").html "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button><span>" + message + "</span></div>"
+    return
 
   slider.resetSize()
   setTimeout slider.pulse, 1000
@@ -74,23 +84,20 @@ $ ->
     $(@).addClass("active")
     name = $(@).data("name")
     value = $(@).data("value")
+    $("input#objective").val(value)
     $(".leadgen .slide.personalize .panel-heading span").text(name)
     setTimeout () =>
       slider.slide("next")
     , 250
     ev.preventDefault()
 
-
   $(".leadgen .slide.personalize .prev-slide").click (ev) ->
     slider.slide("prev")
     ev.preventDefault()
 
-  $("#find-trainer-form").submit (ev) ->
-    slider.slide("next")
-    ev.preventDefault()
-
   $(".activities .label").click (ev) ->
     $(@).toggleClass("active")
+    setActivities()
     ev.preventDefault()
 
   datepicker = $('.datepicker').datepicker()
@@ -99,7 +106,44 @@ $ ->
     return
   )
 
-
-  $("#price").slider()
-  $("#price").on "slide", (slideEvt) ->
+  $("#pricepoint").slider()
+  $("#pricepoint").on "slide", (slideEvt) ->
     $(".price-input").text slideEvt.value
+
+
+  $("#find-trainer-form").submit (ev) ->
+    if $("#email").val() == ""
+      form_warning("Please fill out an email address.")
+      slider.resetSize()
+      ev.preventDefault
+      return false
+    data =
+      lead:
+        email: $("#email").val()
+        activities: $("#activities").val()
+        objective: $("#objective").val()
+        pricepoint: $("#pricepoint").val()
+        startdate: $("#startdate").val()
+    $.ajax
+      type: "POST"
+      dataType: "json"
+      data: data
+      url: "/leads"
+      success: (data, textStatus, jqXHR) =>
+        console.log(data)
+        slider.slide("next")
+      error: (a, b, c) =>
+        form_warning("Uh oh, something went wrong. Please make sure all of the form fields are filled out!")
+        slider.resetSize()
+
+    return false
+
+  $("a[href*=#]:not([href=#])").click ->
+    if location.pathname.replace(/^\//, "") is @pathname.replace(/^\//, "") and location.hostname is @hostname
+      target = $(@hash)
+      target = (if target.length then target else $("[name=" + @hash.slice(1) + "]"))
+      if target.length
+        $("html,body").animate
+          scrollTop: target.offset().top
+        , 1000
+        false

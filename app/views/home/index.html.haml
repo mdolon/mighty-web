@@ -50,9 +50,12 @@
                     %span
                   %p Now tell us a little about yourself
                 .panel-body
+                  .form-alerts
                   %form#find-trainer-form{:role => "form"}
+                    %input{type: "hidden", id: "objective", name: "objective"}
                     .form-group
                       %label{:for => "activities"} What activities do you enjoy?
+                      %input{type: "hidden", id: "activities", name: "activities"}
                       .activities
                         = link_to "Running", "#", class: "label label-default"
                         = link_to "Swimming", "#", class: "label label-default"
@@ -62,10 +65,10 @@
                         = link_to "Crossfit", "#", class: "label label-default"
                         = link_to "Tennis", "#", class: "label label-default"
                     .form-group
-                      %label{:for => "price"} How much are you willing to pay for this?
+                      %label{for: "price"} How much are you willing to pay for this?
                       .row
                         .col-md-9.col-sm-9.col-xs-9
-                          %input#price{"data-slider-id" => "price-slider", "data-slider-max" => "200", "data-slider-min" => "20", "data-slider-step" => "5", "data-slider-value" => "80", type: "text", name: "price"}
+                          %input#pricepoint{"data-slider-id" => "price-slider", "data-slider-max" => "200", "data-slider-min" => "20", "data-slider-step" => "5", "data-slider-value" => "80", type: "text", name: "pricepoint"}
                         .col-md-3.col-sm-3.col-xs-3.no-padding-left
                           .price-update.badge
                             = raw("$<span class='price-input'>60</span>")
@@ -74,13 +77,13 @@
                       .col-md-6
                         .form-group
                           %label{:for => "email"} What's your email address?
-                          %input#email.form-control{placeholder: "Enter email", type: "email", name: "email"}
+                          %input#email.form-control{placeholder: "Enter email", type: "email", name: "email", required: "required"}
                           %span.glyphicon.glyphicon-ok.form-control-feedback
                       .col-md-6
                         .form-group
                           %label{:for => "start-date"} When can you start?
                           .date-input
-                            %input#start-date.datepicker.form-control{placeholder: "Click to select", type: "text"}
+                            %input#startdate.datepicker.form-control{placeholder: "Click to select", type: "text", name: "startdate", required: "required"}
                             %span.glyphicon.glyphicon-calendar
                           %span.glyphicon.glyphicon-ok.form-control-feedback
 
@@ -93,7 +96,7 @@
                   %h3 Sweet, we're on it!
                   %p.lead
                     We're hot on the search for your perfect fitness coach. We'll send you an email as soon as we've located them (usually within 24 hours).
-.secondary
+.secondary#learn
   .container
     %h2.title
       %span How It Works
