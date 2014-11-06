@@ -86,3 +86,12 @@ $ ->
   $("#find-trainer-form").submit (ev) ->
     slider.slide("next")
     ev.preventDefault()
+
+  $(".activities .label").click (ev) ->
+    $(@).toggleClass("active")
+    ev.preventDefault()
+
+  $('.datepicker').datepicker()
+  $("#price").slider()
+  $("#price").on "slide", (slideEvt) ->
+    $(".price-input").text slideEvt.value

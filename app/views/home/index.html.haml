@@ -51,27 +51,40 @@
                   %p Now tell us a little about yourself
                 .panel-body
                   %form#find-trainer-form{:role => "form"}
-                    .form-group.has-success.has-feedback
+                    .form-group
                       %label{:for => "activities"} What activities do you enjoy?
-                      %input#activities.form-control{:placeholder => "Enter email", :type => "email"}
-                      %span.glyphicon.glyphicon-ok.form-control-feedback
+                      .activities
+                        = link_to "Running", "#", class: "label label-default"
+                        = link_to "Swimming", "#", class: "label label-default"
+                        = link_to "Biking", "#", class: "label label-default"
+                        = link_to "Yoga", "#", class: "label label-default"
+                        = link_to "Pilates", "#", class: "label label-default"
+                        = link_to "Crossfit", "#", class: "label label-default"
+                        = link_to "Tennis", "#", class: "label label-default"
                     .form-group
                       %label{:for => "price"} How much are you willing to pay for this?
-                      %input#price.form-control{:placeholder => "Password", :type => "password"}
+                      .row
+                        .col-md-9.col-sm-9.col-xs-9
+                          %input#price{"data-slider-id" => "price-slider", "data-slider-max" => "200", "data-slider-min" => "20", "data-slider-step" => "5", "data-slider-value" => "60", type: "text", name: "price"}
+                        .col-md-3.col-sm-3.col-xs-3.no-padding-left
+                          .price-update.badge
+                            = raw("$<span class='price-input'>60</span>")
                       %span.glyphicon.glyphicon-ok.form-control-feedback
                     .row
                       .col-md-6
                         .form-group
                           %label{:for => "email"} What's your email address?
-                          %input#email.form-control{:placeholder => "Enter email", :type => "email"}
+                          %input#email.form-control{placeholder: "Enter email", type: "email", name: "email"}
                           %span.glyphicon.glyphicon-ok.form-control-feedback
                       .col-md-6
                         .form-group
                           %label{:for => "start-date"} When can you start?
-                          %input#start-date.form-control{:placeholder => "Password", :type => "password"}
+                          .date-input
+                            %input#start-date.datepicker.form-control{placeholder: "Click to select", type: "text"}
+                            %span.glyphicon.glyphicon-calendar
                           %span.glyphicon.glyphicon-ok.form-control-feedback
 
-                    %button.btn.btn-submit.btn-success.btn-lg{:type => "submit"} Find My Coach &raquo;
+                    %button.btn.btn-submit.btn-success.btn-lg{type: "submit"} Find My Coach &raquo;
 
             .slide.finish
               .panel.lead-form

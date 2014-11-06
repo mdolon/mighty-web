@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require_tree ./vendor
  *= require_self
  */
 
@@ -20,6 +21,7 @@
 
 $primary-color: #054ba6;
 $darker-color: #063e86;
+$brighter-color: #337dd0;
 
 body {
   background: $primary-color image-url("bg-blue.png");
@@ -44,6 +46,8 @@ p {
   }
 }
 
+.no-padding-left { padding-left: 0; }
+.no-padding-right { padding-right: 0; }
 
 #header {
   position: relative;
@@ -224,6 +228,33 @@ p {
                 width: 100%;
                 font-size: 15px;
                 font-weight: bold;  text-align: center;  text-transform: uppercase;
+              }
+              .activities {
+                .label {
+                  @include border-radius(20px);
+                  background: #bbb;  color: #fff;
+                  text-transform: uppercase;
+                  &.active {
+                    background: #d46605;  color: #fff;
+                  }
+                }
+              }
+              .date-input {
+                position: relative;
+                .glyphicon-calendar {
+                  @include opacity(0.5);
+                  position: absolute;
+                  top: 10px;  right: 10px;
+                }
+              }
+              #price-slider {
+                width: 100%;
+                .slider-track {
+                  background: #ccc;
+                  .slider-selection {
+                    background: #b7d6f9;
+                  }
+                }
               }
             }
             ul {
