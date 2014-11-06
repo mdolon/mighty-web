@@ -67,7 +67,7 @@ $ ->
 
   $(window).on 'resize', slider.resetSize
 
-  $(".leadgen .slide.objective a.objective-link").click (ev) =>
+  $(".leadgen .slide.objective a.objective-link").click (ev) ->
     $(".objective-link").removeClass("active")
     $(@).addClass("active")
     name = $(@).data("name")
