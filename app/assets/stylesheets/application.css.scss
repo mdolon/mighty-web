@@ -30,6 +30,17 @@ p {
   }
 }
 
+.centerd-list {
+  width: 100%;
+  text-align: center;
+  li {
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+  }
+}
+
+
 #header {
   background: $darker-color;
   position: relative;
