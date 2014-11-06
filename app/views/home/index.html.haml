@@ -1,7 +1,7 @@
 .leadgen
   .container
     .row
-      .col-md-6.hidden-xs
+      .col-md-6
         .promo
           .big-spacer.hidden-xs.hidden-sm
           %h2.primary
@@ -11,33 +11,92 @@
             connects you with trained fitness professionals who can help you reach your goals. All within your own neighborhood!
       .col-md-2
       .col-md-4
-        .panel.signup
-          .panel-heading
-            %h4 Ready to find your trainer?
-            %p Tell us what you'd like to work on.
-          .panel-body
-            %h2 I want to:
-            %ul.list-unstyled
-              %li
-                = link_to "#", class: "panel" do
-                  .panel-body
-                    = image_tag("icon-scale.png")
-                    %h4 Lose Weight
-              %li
-                = link_to "#", class: "panel" do
-                  .panel-body
-                    = image_tag("icon-tone.png")
-                    %h4 Get Toned
-              %li
-                = link_to "#", class: "panel" do
-                  .panel-body
-                    = image_tag("icon-weights.png")
-                    %h4 Get Stronger
-              %li
-                = link_to "#", class: "panel" do
-                  .panel-body
-                    = image_tag("icon-run.png")
-                    %h4 Finish a Race
+        .slide-wrap
+          .slide-strip
+            .slide.objective
+              .panel.signup
+                .panel-heading
+                  %h4 Ready to find your trainer?
+                  %p Tell us what you'd like to work on.
+                .panel-body
+                  %h2 I want to:
+                  %ul.list-unstyled
+                    %li
+                      = link_to "#", class: "panel objective-link" do
+                        .panel-body
+                          = image_tag("icon-scale.png")
+                          %h4 Lose Weight
+                    %li
+                      = link_to "#", class: "panel objective-link" do
+                        .panel-body
+                          = image_tag("icon-tone.png")
+                          %h4 Get Toned
+                    %li
+                      = link_to "#", class: "panel objective-link" do
+                        .panel-body
+                          = image_tag("icon-weights.png")
+                          %h4 Get Stronger
+                    %li
+                      = link_to "#", class: "panel objective-link" do
+                        .panel-body
+                          = image_tag("icon-run.png")
+                          %h4 Finish a Race
+            .slide
+              .panel.signup
+                .panel-heading
+                  %h4 Ready to find your trainer?
+                  %p Tell us what you'd like to work on.
+                .panel-body
+                  %h2 I want to:
+                  %ul.list-unstyled
+                    %li
+                      = link_to "#", class: "panel" do
+                        .panel-body
+                          = image_tag("icon-scale.png")
+                          %h4 Lose Weight
+                    %li
+                      = link_to "#", class: "panel" do
+                        .panel-body
+                          = image_tag("icon-tone.png")
+                          %h4 Get Toned
+                    %li
+                      = link_to "#", class: "panel" do
+                        .panel-body
+                          = image_tag("icon-weights.png")
+                          %h4 Get Stronger
+                    %li
+                      = link_to "#", class: "panel" do
+                        .panel-body
+                          = image_tag("icon-run.png")
+                          %h4 Finish a Race
+            .slide
+              .panel.signup
+                .panel-heading
+                  %h4 Ready to find your trainer?
+                  %p Tell us what you'd like to work on.
+                .panel-body
+                  %h2 I want to:
+                  %ul.list-unstyled
+                    %li
+                      = link_to "#", class: "panel" do
+                        .panel-body
+                          = image_tag("icon-scale.png")
+                          %h4 Lose Weight
+                    %li
+                      = link_to "#", class: "panel" do
+                        .panel-body
+                          = image_tag("icon-tone.png")
+                          %h4 Get Toned
+                    %li
+                      = link_to "#", class: "panel" do
+                        .panel-body
+                          = image_tag("icon-weights.png")
+                          %h4 Get Stronger
+                    %li
+                      = link_to "#", class: "panel" do
+                        .panel-body
+                          = image_tag("icon-run.png")
+                          %h4 Finish a Race
 .secondary
   .container
     %h2

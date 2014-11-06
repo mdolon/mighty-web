@@ -1,18 +1,6 @@
-//= require bootstrap-sprockets
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap
 //= require turbolinks
 //= require_tree ./vendor
 //= require_tree .
-
-$ ->
-  # $(".typed").typed
-  #   strings: [
-  #     "Personal Trainer"
-  #     "Fitness Coach"
-  #     "Health Expert"
-  #     "Nutritionist"
-  #   ]
-  #   typeSpeed: 50
-  #   backSpeed: 25
-  #   startDelay: 300
-  #   backDelay: 2000
-  #   loop: true

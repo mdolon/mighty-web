@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
       h2.primary {
         @include border-radius(3px);
         @include background-image(linear-gradient(to right, #216cbf, $primary-color));
-        padding: 3px 8px;  margin-left: -8px;  margin-right: -8px;
+        padding: 3px 8px;  margin: 0 -8px 15px;
         font-weight: bold;
       }
       // .typed-cont {
@@ -132,40 +132,57 @@ h1, h2, h3, h4, h5, h6 {
         }
       }
     }
-    .panel.signup {
-      @include background-image(linear-gradient(#ffffff, #eaeaea));
-      text-align: center;
-      margin: 0;
-      color: #525252;
-      .panel-heading {
-        @include background-image(linear-gradient(#f7f7f7, #f5f5f5));
-        padding: 18px 10px;
-        border-bottom: 1px solid #ccc;
-        h4 { margin: 0 0 2px; }
-        p { margin: 0; }
+    .slide-wrap {
+      width: 100%;
+      overflow: hidden;
+      .slide-strip {
+        position: relative;
       }
-      .panel-body {
-        h2 {
-          margin: 0;
-          font-size: 24px;
+      .slide {
+        display: none;
+        position: relative;
+        float: left;
+        &.objective {
+          display: block;
         }
-        ul {
-          li {
-            float: left;
-            width: 50%;
-            a.panel {
-              display: block;
-              margin: 10px 0 0;
-              background: #ccc;  border: 2px solid #c9c9c9;
-              color: #525252;  text-decoration: none;
-              h4 { margin: 5px 0 0;  padding: 0;  font-size: 14px; }
+        .panel.signup {
+          @include background-image(linear-gradient(#ffffff, #eaeaea));
+          position: relative;
+          text-align: center;
+          margin: 0;
+          color: #525252;
+          z-index: 5;
+          .panel-heading {
+            @include background-image(linear-gradient(#f7f7f7, #f5f5f5));
+            padding: 18px 10px;
+            border-bottom: 1px solid #ccc;
+            h4 { margin: 0 0 2px; }
+            p { margin: 0; }
+          }
+          .panel-body {
+            h2 {
+              margin: 0;
+              font-size: 24px;
             }
-          }
-          li:nth-child(odd) {
-            .panel { margin-right: 5px; }
-          }
-          li:nth-child(even) {
-            .panel { margin-left: 5px; }
+            ul {
+              li {
+                float: left;
+                width: 50%;
+                a.panel {
+                  display: block;
+                  margin: 10px 0 0;
+                  background: #ccc;  border: 2px solid #c9c9c9;
+                  color: #525252;  text-decoration: none;
+                  h4 { margin: 5px 0 0;  padding: 0;  font-size: 14px; }
+                }
+              }
+              li:nth-child(odd) {
+                .panel { margin-right: 5px; }
+              }
+              li:nth-child(even) {
+                .panel { margin-left: 5px; }
+              }
+            }
           }
         }
       }
@@ -174,7 +191,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .secondary {
-  padding: 30px 0;
+  position: relative;
+  padding: 40px 0;
   text-align: center;
 }
 
