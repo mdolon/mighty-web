@@ -91,7 +91,13 @@ $ ->
     $(@).toggleClass("active")
     ev.preventDefault()
 
-  $('.datepicker').datepicker()
+  datepicker = $('.datepicker').datepicker()
+  datepicker.on("changeDate", (ev) ->
+    datepicker.datepicker("hide")
+    return
+  )
+
+
   $("#price").slider()
   $("#price").on "slide", (slideEvt) ->
     $(".price-input").text slideEvt.value
