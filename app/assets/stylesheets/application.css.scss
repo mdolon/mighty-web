@@ -18,18 +18,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$darker-color: #0a568b;
+$primary-color: #0f6aaa;
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
 }
 
 #header {
+  @include background-image(linear-gradient($darker-color, $primary-color));
   position: relative;
-  background: #e35b3a;
   overflow: hidden;
   .navbar {
-    padding: 40px 0 0;
-    min-height: 90px;
+    padding: 20px 0 0;
     background: none;  border-width: 0;
     #bgvid {
       display: block;
@@ -44,14 +46,22 @@ h1, h2, h3, h4, h5, h6 {
     .navbar-header {
       z-index: 3;
       .navbar-brand {
-        position: relative;
-        top: -25px;
-        height: 85px;
+        .logo, .logo-small {
+          position: relative;
+        }
+        .logo {
+          top: -10px;
+          height: 52px;
+        }
+        .logo-small {
+          top: -5px;
+          height: 31px;
+        }
       }
       .navbar-toggle {
-        border-color: #ff9d36;
+        border-color: #769cb9;
         &:hover, &:focus, &:active {
-          background-color: #ff5d19;
+          background-color: #0d5f99;
         }
         .icon-bar {
           background: #fff;
@@ -61,9 +71,10 @@ h1, h2, h3, h4, h5, h6 {
     .navbar-collapse {
       z-index: 2;
       &.in, &.collapsing {
-        background: #ba533a;
+        background: #0d5f99;
+        border-color: #769cb9;
         li a:hover {
-          background: #ce5d41;
+          background: #0d5f99;
         }
       }
       a, .btn-default {
@@ -80,45 +91,44 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.jumbotron {
-  padding: 0 !important;  margin: 0 !important;
-  background: #e35b3a;
-  color: #fff;
-  .container {
-    max-height: 350px;
-    overflow: hidden;
-    img {
-      position: relative;
-      top: -40px;
+.leadgen {
+  background: $primary-color;  
+  .promo {
+    color: #fff;
+    .big-spacer {
+      min-height: 20px;
+      width: 100%;
     }
-    h1 {
-      font-weight: normal;
-      margin: 0;
+    h2.primary {
+      @include border-radius(3px);
+      @include background-image(linear-gradient(to right, #247ebe, $primary-color));
+      padding: 3px 8px;  margin-left: -8px;  margin-right: -8px;
+      font-weight: bold;
     }
-    .typed-cont {
-      margin: 5px 0 15px;
-      h1 {
-        @include border-radius(3px);
-        @include background-image(linear-gradient(to right, #ba533a, #e35b3a));
-        padding: 3px 8px;  margin-left: -8px;  margin-right: -8px;
-        font-weight: bold;
-      }
-    }
+    // .typed-cont {
+    //   margin: 5px 0 15px;
+    //   h2 {
+    //     @include border-radius(3px);
+    //     @include background-image(linear-gradient(to right, #247ebe, $primary-color));
+    //     padding: 3px 8px;  margin-left: -8px;  margin-right: -8px;
+    //     font-weight: bold;
+    //   }
+    // }
     p {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       span {
         border-bottom: 1px dotted #fff;
         font-weight: bold;
       }
     }
-    .btn {
-      padding: 12px 20px;
-      background: #fff;  border: none;
-      font-weight: bold;  font-size: 15px;  text-transform: uppercase;  color: #e35b3a;
-      margin-bottom: 30px;
-      &:hover {
-        background: #eee;
-      }
+  }
+  .panel.signup {
+    background: $darker-color;
+    text-align: center;
+    color: #fff;
+    .panel {
+      background: none;
+      border: 2px solid $primary-color;
     }
   }
 }

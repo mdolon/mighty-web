@@ -8,13 +8,14 @@
           %span.icon-bar
           %span.icon-bar
         %a.navbar-brand{:href => "#"}
-          %img{:src => asset_url("logo.png")}/
+          = image_tag("logo.png", class: "logo hidden-xs")
+          = image_tag("logo-small.png", class: "logo-small visible-xs")
       #header-nav.collapse.navbar-collapse
         %button.btn.btn-default.navbar-btn.navbar-right.hidden-xs{:type => "button"} Sign in
         %ul.nav.navbar-nav.navbar-right
           %li
-            %a{:href => "/learn"} Search Classes
+            %a{:href => "/learn"} How It Works
           %li
-            %a{:href => "/instruct"} Become an Instructor
+            %a{:href => "/instruct"} Trainer Signup
           %li.hidden-sm.hidden-md.hidden-lg
             %a{:href => "#"} Sign In

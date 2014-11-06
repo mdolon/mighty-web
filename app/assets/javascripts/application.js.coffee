@@ -4,18 +4,15 @@
 //= require_tree .
 
 $ ->
-  $(".typed").typed
-    strings: [
-      "Photography"
-      "Acting"
-      "Fitness"
-      "Vegan Cooking"
-      "Web Design"
-      "Playing Guitar"
-      "Public Speaking"
-    ]
-    typeSpeed: 50
-    backSpeed: 25
-    startDelay: 300
-    backDelay: 2000
-    loop: true
+  # $(".typed").typed
+  #   strings: [
+  #     "Personal Trainer"
+  #     "Fitness Coach"
+  #     "Health Expert"
+  #     "Nutritionist"
+  #   ]
+  #   typeSpeed: 50
+  #   backSpeed: 25
+  #   startDelay: 300
+  #   backDelay: 2000
+  #   loop: true
