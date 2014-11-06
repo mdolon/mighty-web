@@ -18,8 +18,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$darker-color: #0a568b;
-$primary-color: #0f6aaa;
+$darker-color: #05468f;
+$primary-color: #0653a9;
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
@@ -27,11 +27,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header {
-  @include background-image(linear-gradient($darker-color, $primary-color));
+  background: $darker-color;
   position: relative;
   overflow: hidden;
   .navbar {
-    padding: 20px 0 0;
+    padding: 5px 0 0;  margin: 0;
     background: none;  border-width: 0;
     #bgvid {
       display: block;
@@ -46,12 +46,14 @@ h1, h2, h3, h4, h5, h6 {
     .navbar-header {
       z-index: 3;
       .navbar-brand {
+        height: auto;
+        padding-bottom: 0 !important;
         .logo, .logo-small {
           position: relative;
         }
         .logo {
-          top: -10px;
-          height: 52px;
+          top: -5px;
+          height: 46px;
         }
         .logo-small {
           top: -5px;
@@ -59,9 +61,9 @@ h1, h2, h3, h4, h5, h6 {
         }
       }
       .navbar-toggle {
-        border-color: #769cb9;
+        border-color: $darker-color;
         &:hover, &:focus, &:active {
-          background-color: #0d5f99;
+          background-color: $darker-color;
         }
         .icon-bar {
           background: #fff;
@@ -70,11 +72,14 @@ h1, h2, h3, h4, h5, h6 {
     }
     .navbar-collapse {
       z-index: 2;
+      text-transform: uppercase;
+      font-size: 13px;
       &.in, &.collapsing {
-        background: #0d5f99;
-        border-color: #769cb9;
+        background: #fff;
+        border: none;
+        li a { color: $darker-color; }
         li a:hover {
-          background: #0d5f99;
+          background: #eee;
         }
       }
       a, .btn-default {
@@ -85,50 +90,85 @@ h1, h2, h3, h4, h5, h6 {
         margin-left: 20px;
         background: none;
         border-width: 2px;
-        border-color: #fff;
+        border-color: #5692bc;
+        text-transform: uppercase;
+        font-size: 13px;
       }
     }
   }
 }
 
 .leadgen {
-  background: $primary-color;  
-  .promo {
-    color: #fff;
-    .big-spacer {
-      min-height: 20px;
-      width: 100%;
-    }
-    h2.primary {
-      @include border-radius(3px);
-      @include background-image(linear-gradient(to right, #247ebe, $primary-color));
-      padding: 3px 8px;  margin-left: -8px;  margin-right: -8px;
-      font-weight: bold;
-    }
-    // .typed-cont {
-    //   margin: 5px 0 15px;
-    //   h2 {
-    //     @include border-radius(3px);
-    //     @include background-image(linear-gradient(to right, #247ebe, $primary-color));
-    //     padding: 3px 8px;  margin-left: -8px;  margin-right: -8px;
-    //     font-weight: bold;
-    //   }
-    // }
-    p {
-      margin-bottom: 20px;
-      span {
-        border-bottom: 1px dotted #fff;
+  padding: 40px 0;
+  background: $primary-color;
+  .container {
+    background: image-url("bg-dots.png") no-repeat bottom center;
+    .promo {
+      color: #fff;
+      .big-spacer {
+        min-height: 40px;
+        width: 100%;
+      }
+      h2.primary {
+        @include border-radius(3px);
+        @include background-image(linear-gradient(to right, #216cbf, $primary-color));
+        padding: 3px 8px;  margin-left: -8px;  margin-right: -8px;
         font-weight: bold;
       }
+      // .typed-cont {
+      //   margin: 5px 0 15px;
+      //   h2 {
+      //     @include border-radius(3px);
+      //     @include background-image(linear-gradient(to right, #247ebe, $primary-color));
+      //     padding: 3px 8px;  margin-left: -8px;  margin-right: -8px;
+      //     font-weight: bold;
+      //   }
+      // }
+      p {
+        margin-bottom: 20px;
+        span {
+          border-bottom: 1px dotted #fff;
+          font-weight: bold;
+        }
+      }
     }
-  }
-  .panel.signup {
-    background: $darker-color;
-    text-align: center;
-    color: #fff;
-    .panel {
-      background: none;
-      border: 2px solid $primary-color;
+    .panel.signup {
+      @include background-image(linear-gradient(#ffffff, #eaeaea));
+      text-align: center;
+      margin: 0;
+      color: #525252;
+      .panel-heading {
+        @include background-image(linear-gradient(#f7f7f7, #f5f5f5));
+        padding: 18px 10px;
+        border-bottom: 1px solid #ccc;
+        h4 { margin: 0 0 2px; }
+        p { margin: 0; }
+      }
+      .panel-body {
+        h2 {
+          margin: 0;
+          font-size: 24px;
+        }
+        ul {
+          li {
+            float: left;
+            width: 50%;
+            a.panel {
+              display: block;
+              margin: 10px 0 0;
+              background: #ccc;  border: 2px solid #c9c9c9;
+              color: #525252;  text-decoration: none;
+              h4 { margin: 5px 0 0;  padding: 0;  font-size: 14px; }
+            }
+          }
+          li:nth-child(odd) {
+            .panel { margin-right: 5px; }
+          }
+          li:nth-child(even) {
+            .panel { margin-left: 5px; }
+          }
+        }
+      }
     }
   }
 }
