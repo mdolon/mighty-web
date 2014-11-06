@@ -231,7 +231,10 @@ p {
                   margin: 10px 0 0;
                   background: #ccc;  border: 2px solid #c9c9c9;
                   color: #525252;  text-decoration: none;
-                  h4 { margin: 5px 0 0;  padding: 0;  font-size: 14px; }
+                  h4 {
+                    margin: 5px 0 0;  padding: 0;
+                    font-weight: bold;  font-size: 15px;
+                  }
                   &:hover {
                     background: #ddd;
                   }
