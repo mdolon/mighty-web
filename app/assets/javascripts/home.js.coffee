@@ -23,18 +23,22 @@ $ ->
     position = $(".slide").index(current_slide) + 1
     offset = (position*slide_width)-slide_width
     $(".leadgen .slide").css("width", slide_width).show()
+    $(".leadgen .slide-wrap").css("height", current_slide.height())
     $(".leadgen .slide-strip").css("width", slide_width*num_slides)
     $(".leadgen .slide-strip").css("left", -offset)
 
-  sliderNext = () =>
+  slide = (action) => 
     current_slide = $(".slide.current")
-    next_slide = current_slide.next()
-    if next_slide.length
+    target_slide = if action == "next" then current_slide.next() else current_slide.prev()
+    if target_slide.length
       current_slide.removeClass("current")
-      next_slide.addClass("current")
+      target_slide.addClass("current")
       slide_width = $(".leadgen .slide-wrap").width()
       $(".leadgen .slide-strip").animate
-        left: "+=" + (-slide_width)
+        left: "+=" + (if action == "next" then -slide_width else slide_width)
+      , 500
+      $(".leadgen .slide-wrap").animate
+        height: target_slide.height()
       , 500
 
   sliderResetSize()
@@ -49,10 +53,14 @@ $ ->
     value = $(link).data("value")
     $(".leadgen .slide.personalize .panel-heading span").text(name)
     setTimeout () =>
-      sliderNext()
+      slide("next")
     , 250
     ev.preventDefault()
 
+  $(".leadgen .slide.personalize .prev-slide").click (ev) =>
+    slide("prev")
+    ev.preventDefault()
+
   $("#find-trainer-form").submit (ev) =>
-    sliderNext()
+    slide("next")
     ev.preventDefault()

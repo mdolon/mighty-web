@@ -43,6 +43,8 @@
             .slide.personalize
               .panel.lead-form
                 .panel-heading
+                  = link_to "#", class: "prev-slide" do
+                    = image_tag("icon-signup-back.png")
                   %h4
                     Great! You want to
                     %span
@@ -80,24 +82,26 @@
                     We're hot on the search for your perfect fitness coach. We'll send you an email as soon as we've located them (usually within 24 hours).
 .secondary
   .container
-    %h2
-      How It Works
-    %p.lead
-      Check out the following classes being taught in
-      %span New York, NY
-    .row
-      .col-md-4
-        %img{:src => asset_url("icon-bike.png")}/
-        %h4 Classes in Topics You Like
-        %p Find experts for everything from photography and fitness, to cooking and makeup.
-      .col-md-4
-        %img{:src => asset_url("icon-clock.png")}/
-        %h4 Learn Together in Small Groups
-        %p Have fun while learning by working with others and participating in group activities.
-      .col-md-4
-        %img{:src => asset_url("icon-prize.png")}/
-        %h4 Intuitive Feedback System
-        %p Trainers earn feedback and ratings after each session, fostering a positive ecosystem.
+    %h2.title
+      %span How It Works
+    .feature.row.first
+      .col-md-6
+        %h3 Tell Mighty about your fitness goals
+        %p Mighty has certified trainers and coaches ready to help you meet your goals. Whether you’re just beginning to work out or running a long race, Mighty can help.
+        %p Your fitness goals are used to provide service personalized to meet your needs.
+      .col-md-6
+    .feature.row
+      .col-md-6
+      .col-md-6
+        %h3 We do the work
+        %p Mighty curates its list of thousands of highly-experienced trainers to match you to a professional with the background and qualifications best suited to you.
+        %p In under 24 hours, Mighty will reach out to you to introduce your personal trainer.
+    .feature.row
+      .col-md-6
+        %h3 Tell Mighty about your fitness goals
+        %p Your trainer will schedule a time and location convenient for you where you can meet and begin achieving your goals.
+        %p Whether you plan on an individual session or multiple, Mighty and your trainer will help you set up a schedule and routine that you can stick to.
+      .col-md-6
 / .trainers
 /   .container
 /     %h3
