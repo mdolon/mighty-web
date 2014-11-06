@@ -9,12 +9,11 @@
           %p.lead
             %span Mighty
             connects you with trained fitness professionals who can help you reach your goals. All within your own neighborhood!
-      .col-md-2
-      .col-md-4
+      .col-md-6
         .slide-wrap
           .slide-strip
-            .slide.objective
-              .panel.signup
+            .slide.objective.current
+              .panel.lead-form
                 .panel-heading
                   %h4 Ready to find your trainer?
                   %p Tell us what you'd like to work on.
@@ -22,81 +21,63 @@
                   %h2 I want to:
                   %ul.list-unstyled
                     %li
-                      = link_to "#", class: "panel objective-link" do
+                      = link_to "#", class: "panel objective-link", data: {name: "Lose Weight", value: "lose-weight"} do
                         .panel-body
                           = image_tag("icon-scale.png")
                           %h4 Lose Weight
                     %li
-                      = link_to "#", class: "panel objective-link" do
+                      = link_to "#", class: "panel objective-link", data: {name: "Get Toned", value: "get-toned"} do
                         .panel-body
                           = image_tag("icon-tone.png")
                           %h4 Get Toned
                     %li
-                      = link_to "#", class: "panel objective-link" do
+                      = link_to "#", class: "panel objective-link", data: {name: "Get Stronger", value: "get-stronger"} do
                         .panel-body
                           = image_tag("icon-weights.png")
                           %h4 Get Stronger
                     %li
-                      = link_to "#", class: "panel objective-link" do
+                      = link_to "#", class: "panel objective-link", data: {name: "Finish a Race", value: "finish-race"} do
                         .panel-body
                           = image_tag("icon-run.png")
                           %h4 Finish a Race
-            .slide
-              .panel.signup
+            .slide.personalize
+              .panel.lead-form
                 .panel-heading
-                  %h4 Ready to find your trainer?
-                  %p Tell us what you'd like to work on.
+                  %h4
+                    Great! You want to
+                    %span
+                  %p Now tell us a little about yourself
                 .panel-body
-                  %h2 I want to:
-                  %ul.list-unstyled
-                    %li
-                      = link_to "#", class: "panel" do
-                        .panel-body
-                          = image_tag("icon-scale.png")
-                          %h4 Lose Weight
-                    %li
-                      = link_to "#", class: "panel" do
-                        .panel-body
-                          = image_tag("icon-tone.png")
-                          %h4 Get Toned
-                    %li
-                      = link_to "#", class: "panel" do
-                        .panel-body
-                          = image_tag("icon-weights.png")
-                          %h4 Get Stronger
-                    %li
-                      = link_to "#", class: "panel" do
-                        .panel-body
-                          = image_tag("icon-run.png")
-                          %h4 Finish a Race
-            .slide
-              .panel.signup
-                .panel-heading
-                  %h4 Ready to find your trainer?
-                  %p Tell us what you'd like to work on.
+                  %form#find-trainer-form{:role => "form"}
+                    .form-group.has-success.has-feedback
+                      %label{:for => "activities"} What activities do you enjoy?
+                      %input#activities.form-control{:placeholder => "Enter email", :type => "email"}
+                      %span.glyphicon.glyphicon-ok.form-control-feedback
+                    .form-group
+                      %label{:for => "price"} How much are you willing to pay for this?
+                      %input#price.form-control{:placeholder => "Password", :type => "password"}
+                      %span.glyphicon.glyphicon-ok.form-control-feedback
+                    .row
+                      .col-md-6
+                        .form-group
+                          %label{:for => "email"} What's your email address?
+                          %input#email.form-control{:placeholder => "Enter email", :type => "email"}
+                          %span.glyphicon.glyphicon-ok.form-control-feedback
+                      .col-md-6
+                        .form-group
+                          %label{:for => "start-date"} When can you start?
+                          %input#start-date.form-control{:placeholder => "Password", :type => "password"}
+                          %span.glyphicon.glyphicon-ok.form-control-feedback
+
+                    %button.btn.btn-submit.btn-success.btn-lg{:type => "submit"} Find My Coach &raquo;
+
+            .slide.finish
+              .panel.lead-form
                 .panel-body
-                  %h2 I want to:
-                  %ul.list-unstyled
-                    %li
-                      = link_to "#", class: "panel" do
-                        .panel-body
-                          = image_tag("icon-scale.png")
-                          %h4 Lose Weight
-                    %li
-                      = link_to "#", class: "panel" do
-                        .panel-body
-                          = image_tag("icon-tone.png")
-                          %h4 Get Toned
-                    %li
-                      = link_to "#", class: "panel" do
-                        .panel-body
-                          = image_tag("icon-weights.png")
-                          %h4 Get Stronger
-                    %li
-                      = link_to "#", class: "panel" do
-                        .panel-body
-                          = image_tag("icon-run.png")
-                          %h4 Finish a Race
+                  = image_tag("icon-checkmark-big.png")
+                  %h3 Sweet, we're on it!
+                  %p.lead
+                    We're hot on the search for your perfect fitness coach. We'll send you an email as soon as we've located them (usually within 24 hours).
 .secondary
   .container
     %h2

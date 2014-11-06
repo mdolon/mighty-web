@@ -93,6 +93,9 @@ h1, h2, h3, h4, h5, h6 {
         border-color: #5692bc;
         text-transform: uppercase;
         font-size: 13px;
+        &:hover {
+          border-color: #fff;
+        }
       }
     }
   }
@@ -103,6 +106,9 @@ h1, h2, h3, h4, h5, h6 {
   background: $primary-color;
   .container {
     background: image-url("bg-dots.png") no-repeat bottom center;
+    > .row {
+      padding-left: 60px;  padding-right: 60px;
+    }
     .promo {
       color: #fff;
       .big-spacer {
@@ -145,7 +151,14 @@ h1, h2, h3, h4, h5, h6 {
         &.objective {
           display: block;
         }
-        .panel.signup {
+        &.finish {
+          .panel.lead-form {
+            .panel-body {
+              padding-top: 50px;  padding-bottom: 30px;
+            }
+          }
+        }
+        .panel.lead-form {
           @include background-image(linear-gradient(#ffffff, #eaeaea));
           position: relative;
           text-align: center;
@@ -156,13 +169,37 @@ h1, h2, h3, h4, h5, h6 {
             @include background-image(linear-gradient(#f7f7f7, #f5f5f5));
             padding: 18px 10px;
             border-bottom: 1px solid #ccc;
-            h4 { margin: 0 0 2px; }
+            h4 {
+              margin: 0 0 2px;
+              span {
+                color: #bf3f3f;
+                border-bottom: 1px dotted #bf3f3f;
+              }
+            }
             p { margin: 0; }
           }
           .panel-body {
             h2 {
               margin: 0;
               font-size: 24px;
+            }
+            form {
+              text-align: left;
+              .form-group {
+                &.has-feedback {
+                  .form-control-feedback {
+                    display: block;
+                  }
+                }
+                .form-control-feedback {
+                  display: none;
+                }
+              }
+              .btn-submit {
+                width: 100%;
+                font-size: 15px;
+                font-weight: bold;  text-align: center;  text-transform: uppercase;
+              }
             }
             ul {
               li {
@@ -174,6 +211,12 @@ h1, h2, h3, h4, h5, h6 {
                   background: #ccc;  border: 2px solid #c9c9c9;
                   color: #525252;  text-decoration: none;
                   h4 { margin: 5px 0 0;  padding: 0;  font-size: 14px; }
+                  &:hover {
+                    background: #ddd;
+                  }
+                  &:active, &:focus, &.active {
+                    background: #fff;  border-color: #aaa;
+                  }
                 }
               }
               li:nth-child(odd) {
@@ -322,4 +365,34 @@ h1, h2, h3, h4, h5, h6 {
     0% { opacity:1; }
     50% { opacity:0; }
     100% { opacity:1; }
+}
+
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .leadgen .container .row {
+    padding-left: 0;  padding-right: 0;
+  }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+  .leadgen .container .row {
+    padding-left: 0;  padding-right: 0;
+  }
 }
