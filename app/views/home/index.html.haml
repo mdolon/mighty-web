@@ -60,13 +60,14 @@
                       = link_to "Crossfit", "#", class: "label label-default"
                       = link_to "Tennis", "#", class: "label label-default"
                   .form-group
-                    %label{for: "price"} How much are you willing to pay for this?
+                    %label{for: "price"} How much do you want to pay for this?
                     .row
                       .col-md-9.col-sm-9.col-xs-9
                         %input#pricepoint{"data-slider-id" => "price-slider", "data-slider-max" => "200", "data-slider-min" => "20", "data-slider-step" => "5", "data-slider-value" => "80", type: "text", name: "pricepoint"}
                       .col-md-3.col-sm-3.col-xs-3.no-padding-left
                         .price-update.badge
                           = raw("$<span class='price-input'>60</span>")
+                          per session
                     %span.glyphicon.glyphicon-ok.form-control-feedback
                   .row
                     .col-md-6

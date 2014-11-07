@@ -2,24 +2,16 @@
   .container
     %h2.title
       %span How It Works
-    .feature.row.first
-      .col-md-6
-        %h3 1. Tell us your fitness goals
-        %p Mighty has certified trainers and coaches ready to help you meet your goals. Whether you're just beginning to work out or running a long race, Mighty can help.
-        %p Your fitness goals are used to provide service personalized to meet your needs.
-      .col-md-6.text-center.feature-icon
-        = image_tag("icon-goals.png")
-    .feature.row
-      .col-md-6.col-md-push-6
-        %h3 2. Meet your fitness coach
-        %p Mighty curates its list of thousands of highly-experienced trainers to match you to a professional with the background and qualifications best suited to you.
-        %p In under 24 hours, Mighty will reach out to you to introduce your personal fitness coach.
-      .col-md-6.text-center.feature-icon.col-md-pull-6
-        = image_tag("icon-filter.png")
-    .feature.row.last
-      .col-md-6
-        %h3 3. Enjoy your new, healthier lifestyle
-        %p Your trainer will schedule a time and location convenient for you where you can meet and begin achieving your goals.
-        %p Whether you plan on an individual session or multiple, Mighty and your trainer will help you set up a schedule and routine that you can stick to.
-      .col-md-6.text-center.feature-icon
-        = image_tag("icon-healthy.png")
+    .row.features
+      .col-md-4.feature-item
+        = image_tag("icon-affordable.png")
+        %h3 Affordable Trainers
+        %p Gyms charge trainers <strong>50-75%</strong> of their rates. We take less and pass the savings to you.
+      .col-md-4.feature-item
+        = image_tag("icon-personalized.png")
+        %h3 Personalized Plans
+        %p Your fitness plan is customized by your expert trainer to match your long-term goals.
+      .col-md-4.feature-item
+        = image_tag("icon-results.png")
+        %h3 Results Driven
+        %p We establish a baseline and measure your progress over each session.
