@@ -1,232 +1,96 @@
 .leadgen
   .container
-    .row
-      .col-md-6
-        .promo
-          .big-spacer.hidden-xs.hidden-sm
-          %h2.primary
-            Your Personal Fitness Coach
-          %p.lead
-            %span Mighty
-            connects you with trained fitness professionals who can help you reach your goals. All within your own neighborhood!
-      .col-md-6.slide-cont
-        .slide-wrap
-          .slide-strip
-            .slide.objective.current
-              .panel.lead-form
-                .panel-heading
-                  %h4 Ready to find your coach?
-                  %p Tell us what you'd like to work on.
-                .panel-body
-                  %h2 I want to:
-                  %ul.list-unstyled
-                    %li
-                      = link_to "#", class: "panel objective-link", data: {name: "Lose Weight", value: "lose-weight"} do
-                        .panel-body
-                          = image_tag("icon-scale.png")
-                          %h4 Lose Weight
-                    %li
-                      = link_to "#", class: "panel objective-link", data: {name: "Get Toned", value: "get-toned"} do
-                        .panel-body
-                          = image_tag("icon-tone.png")
-                          %h4 Get Toned
-                    %li
-                      = link_to "#", class: "panel objective-link", data: {name: "Get Stronger", value: "get-stronger"} do
-                        .panel-body
-                          = image_tag("icon-weights.png")
-                          %h4 Get Stronger
-                    %li
-                      = link_to "#", class: "panel objective-link", data: {name: "Finish a Race", value: "finish-race"} do
-                        .panel-body
-                          = image_tag("icon-run.png")
-                          %h4 Finish a Race
-            .slide.personalize
-              .panel.lead-form
-                .panel-heading
-                  = link_to "#", class: "prev-slide" do
-                    = image_tag("icon-signup-back.png")
-                  %h4
-                    Great! You want to
-                    %span
-                  %p Now tell us a little about yourself
-                .panel-body
-                  .form-alerts
-                  %form#find-trainer-form{:role => "form"}
-                    %input{type: "hidden", id: "objective", name: "objective"}
-                    .form-group
-                      %label{:for => "activities"} What activities do you enjoy?
-                      %input{type: "hidden", id: "activities", name: "activities"}
-                      .activities
-                        = link_to "Running", "#", class: "label label-default"
-                        = link_to "Swimming", "#", class: "label label-default"
-                        = link_to "Biking", "#", class: "label label-default"
-                        = link_to "Yoga", "#", class: "label label-default"
-                        = link_to "Pilates", "#", class: "label label-default"
-                        = link_to "Crossfit", "#", class: "label label-default"
-                        = link_to "Tennis", "#", class: "label label-default"
-                    .form-group
-                      %label{for: "price"} How much are you willing to pay for this?
-                      .row
-                        .col-md-9.col-sm-9.col-xs-9
-                          %input#pricepoint{"data-slider-id" => "price-slider", "data-slider-max" => "200", "data-slider-min" => "20", "data-slider-step" => "5", "data-slider-value" => "80", type: "text", name: "pricepoint"}
-                        .col-md-3.col-sm-3.col-xs-3.no-padding-left
-                          .price-update.badge
-                            = raw("$<span class='price-input'>60</span>")
-                      %span.glyphicon.glyphicon-ok.form-control-feedback
+    .splash-cont
+      .promo
+        %h1 Priceline for Personal Trainers
+        %p.lead
+          Name your goals. Name your own price.
+      .slide-wrap
+        .slide-strip
+          .slide.objective.current
+            .panel.lead-form
+              .panel-heading
+                %h4 Ready to find your coach?
+                %p Tell us what you'd like to work on.
+              .panel-body
+                %h2 I want to:
+                %ul.list-unstyled
+                  %li
+                    = link_to "#", class: "panel objective-link", data: {name: "Lose Weight", value: "lose-weight"} do
+                      .panel-body
+                        = image_tag("icon-scale.png")
+                        %h4 Lose Weight
+                  %li
+                    = link_to "#", class: "panel objective-link", data: {name: "Get Toned", value: "get-toned"} do
+                      .panel-body
+                        = image_tag("icon-tone.png")
+                        %h4 Get Toned
+                  %li
+                    = link_to "#", class: "panel objective-link", data: {name: "Get Stronger", value: "get-stronger"} do
+                      .panel-body
+                        = image_tag("icon-weights.png")
+                        %h4 Get Stronger
+                  %li
+                    = link_to "#", class: "panel objective-link", data: {name: "Finish a Race", value: "finish-race"} do
+                      .panel-body
+                        = image_tag("icon-run.png")
+                        %h4 Finish a Race
+          .slide.personalize
+            .panel.lead-form
+              .panel-heading
+                = link_to "#", class: "prev-slide" do
+                  = image_tag("icon-signup-back.png")
+                %h4
+                  Great! You want to
+                  %span
+                %p Now tell us a little about yourself
+              .panel-body
+                .form-alerts
+                %form#find-trainer-form{:role => "form"}
+                  %input{type: "hidden", id: "objective", name: "objective"}
+                  .form-group
+                    %label{:for => "activities"} What activities do you enjoy?
+                    %input{type: "hidden", id: "activities", name: "activities"}
+                    .activities
+                      = link_to "Running", "#", class: "label label-default"
+                      = link_to "Swimming", "#", class: "label label-default"
+                      = link_to "Biking", "#", class: "label label-default"
+                      = link_to "Yoga", "#", class: "label label-default"
+                      = link_to "Pilates", "#", class: "label label-default"
+                      = link_to "Crossfit", "#", class: "label label-default"
+                      = link_to "Tennis", "#", class: "label label-default"
+                  .form-group
+                    %label{for: "price"} How much are you willing to pay for this?
                     .row
-                      .col-md-6
-                        .form-group
-                          %label{:for => "email"} What's your email address?
-                          %input#email.form-control{placeholder: "Enter email", type: "email", name: "email", required: "required"}
-                          %span.glyphicon.glyphicon-ok.form-control-feedback
-                      .col-md-6
-                        .form-group
-                          %label{:for => "start-date"} When can you start?
-                          .date-input
-                            %input#startdate.datepicker.form-control{placeholder: "Click to select", type: "text", name: "startdate", required: "required"}
-                            %span.glyphicon.glyphicon-calendar
-                          %span.glyphicon.glyphicon-ok.form-control-feedback
+                      .col-md-9.col-sm-9.col-xs-9
+                        %input#pricepoint{"data-slider-id" => "price-slider", "data-slider-max" => "200", "data-slider-min" => "20", "data-slider-step" => "5", "data-slider-value" => "80", type: "text", name: "pricepoint"}
+                      .col-md-3.col-sm-3.col-xs-3.no-padding-left
+                        .price-update.badge
+                          = raw("$<span class='price-input'>60</span>")
+                    %span.glyphicon.glyphicon-ok.form-control-feedback
+                  .row
+                    .col-md-6
+                      .form-group
+                        %label{:for => "email"} What's your email address?
+                        %input#email.form-control{placeholder: "Enter email", type: "email", name: "email", required: "required"}
+                        %span.glyphicon.glyphicon-ok.form-control-feedback
+                    .col-md-6
+                      .form-group
+                        %label{:for => "start-date"} When can you start?
+                        .date-input
+                          %input#startdate.datepicker.form-control{placeholder: "Click to select", type: "text", name: "startdate", required: "required"}
+                          %span.glyphicon.glyphicon-calendar
+                        %span.glyphicon.glyphicon-ok.form-control-feedback
 
-                    %button.btn.btn-submit.btn-success.btn-lg{type: "submit"} Find My Coach &raquo;
+                  %button.btn.btn-submit.btn-success.btn-lg{type: "submit"} Find My Coach &raquo;
 
-            .slide.finish
-              .panel.lead-form
-                .panel-body
-                  = image_tag("icon-checkmark-big.png")
-                  %h3 Sweet, we're on it!
-                  %p.lead
-                    We're hot on the search for your perfect fitness coach. We'll send you an email as soon as we've located them (usually within 24 hours).
-.secondary#learn
-  .container
-    %h2.title
-      %span How It Works
-    .feature.row.first
-      .col-md-5
-        %h3 1. Tell us your fitness goals
-        %p Mighty has certified trainers and coaches ready to help you meet your goals. Whether you're just beginning to work out or running a long race, Mighty can help.
-        %p Your fitness goals are used to provide service personalized to meet your needs.
-      .col-md-6.text-center.feature-icon
-        = image_tag("icon-goals.png")
-    .feature.row
-      .col-md-6.text-center.feature-icon
-        = image_tag("icon-filter.png")
-      .col-md-5
-        %h3 2. Meet your fitness coach
-        %p Mighty curates its list of thousands of highly-experienced trainers to match you to a professional with the background and qualifications best suited to you.
-        %p In under 24 hours, Mighty will reach out to you to introduce your personal fitness coach.
-    .feature.row
-      .col-md-5
-        %h3 3. Enjoy your new, healthier lifestyle
-        %p Your trainer will schedule a time and location convenient for you where you can meet and begin achieving your goals.
-        %p Whether you plan on an individual session or multiple, Mighty and your trainer will help you set up a schedule and routine that you can stick to.
-      .col-md-6.text-center.feature-icon
-        = image_tag("icon-healthy.png")
-/ .trainers
-/   .container
-/     %h3
-/       Some of our trainers located in
-/       %span New York, NY
-/     .row
-/       .col-md-3
-/         %a{:href => "#"}
-/           .panel
-/             .panel-heading
-/               %h3 Randy Moore
-/             .panel-body
-/               %p I've been training clients for the last six years, focusing on strength-training, HIIT and calesthenics.
-/             .panel-footer.clearfix
-/               .price.pull-left
-/                 $30
-/                 %span /hr
-/               %ul.list-inline.rating.pull-right
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-empty.png")}/
-/       .col-md-3
-/         %a{:href => "#"}
-/           .panel
-/             .panel-heading
-/               %h3 Randy Moore
-/             .panel-body
-/               %p I've been training clients for the last six years, focusing on strength-training, HIIT and calesthenics.
-/             .panel-footer.clearfix
-/               .price.pull-left
-/                 $30
-/                 %span /hr
-/               %ul.list-inline.rating.pull-right
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-empty.png")}/
-/       .col-md-3
-/         %a{:href => "#"}
-/           .panel
-/             .panel-heading
-/               %h3 Randy Moore
-/             .panel-body
-/               %p I've been training clients for the last six years, focusing on strength-training, HIIT and calesthenics.
-/             .panel-footer.clearfix
-/               .price.pull-left
-/                 $30
-/                 %span /hr
-/               %ul.list-inline.rating.pull-right
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-empty.png")}/
-/       .col-md-3
-/         %a{:href => "#"}
-/           .panel
-/             .panel-heading
-/               %h3 Randy Moore
-/             .panel-body
-/               %p I've been training clients for the last six years, focusing on strength-training, HIIT and calesthenics.
-/             .panel-footer.clearfix
-/               .price.pull-left
-/                 $30
-/                 %span /hr
-/               %ul.list-inline.rating.pull-right
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-full.png")}/
-/                 %li
-/                   %img{:src => asset_url("icon-star-empty.png")}/
-/ .testimonials
-/   .container
-/     .row
-/       .col-md-7.quote
-/         %em &quot; I haven't been able to find a single reliable source that provides info on personal trainers. Mighty is that.
-/         %strong - Marky Mark
-/       .col-md-5
-/         .panel.panel-primary
-/           .panel-body
-/             %p.lead Enter your email address below and we'll notify you as soon as we launch.
-/             %form#mc-form{:action => "//mightyapp.us9.list-manage.com/subscribe/post-json?u=25a48cb83e69e6c3264060fd0&amp;id=3ac7587d0e&amp;c=?", :role => "form"}
-/               .input-group
-/                 %input.form-control{:name => "EMAIL", :placeholder => "Email address", :required => "", :type => "email", :value => ""}/
-/                 %span.input-group-btn
-/                   %button#mc-subscribe.btn.btn-danger{:name => "subscribe", :type => "submit", :value => "Subscribe"} Request Invite
+          .slide.finish
+            .panel.lead-form
+              .panel-body
+                = image_tag("icon-checkmark-big.png")
+                %h3 Sweet, we're on it!
+                %p.lead
+                  We're hot on the search for your perfect fitness coach. We'll send you an email as soon as we've located them (usually within 24 hours).
+
+= render partial: "home/howitworks"
+= render partial: "home/testimonials"

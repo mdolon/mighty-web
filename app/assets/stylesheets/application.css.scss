@@ -128,11 +128,16 @@ p {
   padding: 40px 0;
   .container {
     background: image-url("bg-dots.png") no-repeat bottom center;
+    .splash-cont {
+      max-width: 600px;
+      margin: 0 auto;
+    }
     > .row {
       padding-left: 60px;  padding-right: 60px;
     }
     .promo {
       color: #fff;
+      text-align: center;
       .big-spacer {
         min-height: 40px;
         width: 100%;
@@ -312,6 +317,9 @@ p {
     &.first {
       border-top: none;
     }
+    &.last {
+      padding-bottom: 0;
+    }
     p {
       font-size: 16px;
     }
@@ -325,14 +333,15 @@ p {
 }
 
 .trainers {
-  padding: 40px 0 20px;
-  background: #fafafa;
-  > .container > h3 {
+  padding: 60px 0;
+  background: #444;
+  color: #fff;
+  > .container > h2 {
     text-align: center;
-    margin: 0 0 20px;
+    margin: 10px 0 40px;
     span {
-      color: #bf3f3f;
-      border-bottom: 1px dotted #bf3f3f;
+      color: #ff9d9d;
+      border-bottom: 1px dotted #ff9d9d;
     }
   }
   a {
@@ -390,7 +399,7 @@ p {
 
 .testimonials {
   padding: 40px 0;
-  background: #aaa;
+  background: #888;
   .panel-primary {
     border-color: #888;
   }
