@@ -130,8 +130,11 @@ $ ->
       data: data
       url: "/leads"
       success: (data, textStatus, jqXHR) =>
-        console.log(data)
         slider.slide("next")
+        if $(window).scrollTop() > $("#find-trainer-form").offset().top
+          $("html,body").animate
+            scrollTop: 80
+          , 500
       error: (a, b, c) =>
         form_warning("Uh oh, something went wrong. Please make sure all of the form fields are filled out!")
         slider.resetSize()

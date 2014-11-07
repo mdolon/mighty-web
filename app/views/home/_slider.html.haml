@@ -9,29 +9,29 @@
           %h2 I want to:
           %ul.list-unstyled
             %li
-              = link_to "#", class: "panel objective-link", data: {name: "Lose Weight", value: "lose-weight"} do
+              = link_to "#", class: "panel objective-link trackEvent", data: {name: "Lose Weight", value: "lose-weight"} do
                 .panel-body
                   = image_tag("icon-scale.png")
                   %h4 Lose Weight
             %li
-              = link_to "#", class: "panel objective-link", data: {name: "Get Toned", value: "get-toned"} do
+              = link_to "#", class: "panel objective-link trackEvent", data: {name: "Get Toned", value: "get-toned"} do
                 .panel-body
                   = image_tag("icon-tone.png")
                   %h4 Get Toned
             %li
-              = link_to "#", class: "panel objective-link", data: {name: "Get Stronger", value: "get-stronger"} do
+              = link_to "#", class: "panel objective-link trackEvent", data: {name: "Get Stronger", value: "get-stronger"} do
                 .panel-body
                   = image_tag("icon-weights.png")
                   %h4 Get Stronger
             %li
-              = link_to "#", class: "panel objective-link", data: {name: "Finish a Race", value: "finish-race"} do
+              = link_to "#", class: "panel objective-link trackEvent", data: {name: "Finish a Race", value: "finish-race"} do
                 .panel-body
                   = image_tag("icon-run.png")
                   %h4 Finish a Race
     .slide.personalize
       .panel.lead-form
         .panel-heading
-          = link_to "#", class: "prev-slide" do
+          = link_to "#", class: "prev-slide trackEvent", data: {name: "Back button on leadgen form"} do
             = image_tag("icon-signup-back.png")
           %h4
             Great! You want to
@@ -45,19 +45,19 @@
               %label{:for => "activities"} What activities do you enjoy?
               %input{type: "hidden", id: "activities", name: "activities"}
               .activities
-                = link_to "Running", "#", class: "label label-default"
-                = link_to "Swimming", "#", class: "label label-default"
-                = link_to "Biking", "#", class: "label label-default"
-                = link_to "Yoga", "#", class: "label label-default"
-                = link_to "Pilates", "#", class: "label label-default"
-                = link_to "Crossfit", "#", class: "label label-default"
-                = link_to "Other", "#", class: "label label-default"
+                = link_to "Running", "#", class: "label label-default trackEvent", data: {name: "Clicked running"}
+                = link_to "Swimming", "#", class: "label label-default trackEvent", data: {name: "Clicked swimming"}
+                = link_to "Biking", "#", class: "label label-default trackEvent", data: {name: "Clicked biking"}
+                = link_to "Yoga", "#", class: "label label-default trackEvent", data: {name: "Clicked yoga"}
+                = link_to "Pilates", "#", class: "label label-default trackEvent", data: {name: "Clicked pilates"}
+                = link_to "Crossfit", "#", class: "label label-default trackEvent", data: {name: "Clicked crossfit"}
+                = link_to "Other", "#", class: "label label-default trackEvent", data: {name: "Clicked other"}
             .form-group
               %label{for: "price"} How much do you want to pay for this?
               .row
-                .col-md-9.col-sm-9.col-xs-8
+                .col-md-9.col-sm-9.col-xs-7
                   %input#pricepoint{"data-slider-id" => "price-slider", "data-slider-max" => "200", "data-slider-min" => "20", "data-slider-step" => "5", "data-slider-value" => "80", type: "text", name: "pricepoint"}
-                .col-md-3.col-sm-3.col-xs-4.no-padding-left
+                .col-md-3.col-sm-3.col-xs-5.no-padding-left
                   .price-update.badge
                     = raw("$<span class='price-input'>80</span>")
                     per session
@@ -76,7 +76,7 @@
                     %span.glyphicon.glyphicon-calendar
                   %span.glyphicon.glyphicon-ok.form-control-feedback
 
-            %button.btn.btn-submit.btn-success.btn-lg{type: "submit"} Find My Coach &raquo;
+            %button.btn.btn-submit.btn-success.btn-lg.trackEvent{type: "submit", data: {name: "Submitted leadgen form"}} Find My Coach &raquo;
 
     .slide.finish
       .panel.lead-form

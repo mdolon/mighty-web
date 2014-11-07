@@ -12,4 +12,4 @@
               .input-group
                 %input.form-control{:name => "EMAIL", :placeholder => "Email address", :required => "", :type => "email", :value => ""}/
                 %span.input-group-btn
-                  %button#mc-subscribe.btn.btn-danger{:name => "subscribe", :type => "submit", :value => "Subscribe"} Request Invite
+                  %button#mc-subscribe.btn.btn-danger.trackEvent{:name => "subscribe", :type => "submit", :value => "Subscribe", data: {name: "Subscribed to listserv"}} Subscribe
