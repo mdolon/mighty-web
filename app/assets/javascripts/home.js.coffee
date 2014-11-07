@@ -112,8 +112,8 @@ $ ->
 
 
   $("#find-trainer-form").submit (ev) ->
-    if $("#email").val() == ""
-      form_warning("Please fill out an email address.")
+    if $("#email").val() == "" or $("#activities").val() == ""
+      form_warning("Please select at least one activity.")
       slider.resetSize()
       ev.preventDefault
       return false
