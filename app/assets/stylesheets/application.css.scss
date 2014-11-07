@@ -25,7 +25,9 @@ $brighter-color: #337dd0;
 
 body {
   background: $primary-color image-url("bg-blue.png");
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
@@ -159,7 +161,7 @@ p {
         width: 100%;
       }
       h1 {
-        margin-top: 0;
+        margin: 0;
       }
       h2.primary {
         @include border-radius(3px);
@@ -169,6 +171,7 @@ p {
       }
       p {
         margin-bottom: 20px;
+        font-size: 24px;
         span {
           border-bottom: 1px dotted #fff;
           font-weight: bold;
@@ -225,7 +228,7 @@ p {
                 border-bottom: 1px dotted #bf3f3f;
               }
             }
-            p { margin: 0; }
+            p { margin: 0; font-size: 15px; }
             .prev-slide {
               position: absolute;
               top: 23px;  left: -1px;
@@ -339,7 +342,7 @@ p {
         width: 164px;  height: 164px;
       }
       p {
-        font-size: 15px;  line-height: 22px;
+        font-size: 16px;  line-height: 22px;
       }
     }
   }
@@ -508,5 +511,11 @@ p {
   }
   .feature-icon img {
     width: 100%;
+  }
+  .leadgen .container .promo {
+    h1 { font-size: 25px; }
+    p {
+      font-size: 20px;
+    }
   }
 }
