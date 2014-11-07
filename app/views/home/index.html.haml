@@ -2,9 +2,14 @@
   .container
     .splash-cont
       .promo
-        %h1 Priceline for Personal Trainers
+        %h1
+          Priceline for
+          %br.phone-spacer
+          Personal Trainers
         %p.lead
-          Name your goals. Name your own price.
+          Name your goals.
+          %br.phone-spacer
+          Name your own price.
       = render partial: "home/slider"
 
 = render partial: "home/how_it_works"

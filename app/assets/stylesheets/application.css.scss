@@ -48,6 +48,8 @@ p {
   }
 }
 
+.phone-spacer { display: none; }
+
 .no-padding-left { padding-left: 0; }
 .no-padding-right { padding-right: 0; }
 
@@ -514,9 +516,10 @@ p {
     width: 100%;
   }
   .leadgen .container .promo {
-    h1 { font-size: 25px; }
+    h1 { font-size: 25px;  margin-bottom: 10px; }
     p {
-      font-size: 20px;
+      font-size: 20px;  line-height: 22px;
     }
   }
+  .phone-spacer { display: block; }
 }
