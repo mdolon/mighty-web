@@ -50,7 +50,7 @@ $ ->
           $(".slide-fx").remove()
           return
         slide = $("<div class='slide-fx panel'></div>")
-        $(".slide-cont").append slide
+        $(".slider-cont").append slide
         slide.animate
           top: -15
           left: -15

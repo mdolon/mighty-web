@@ -181,11 +181,14 @@ p {
         }
       }
     }
+    .slider-cont {
+      position: relative;
+    }
     .slide-fx {
       position: absolute;
       z-index: 2;
       top: 0;  left: 0;  right: 0;  bottom: 0;
-      margin: 0 15px;
+      margin: 0;
       border: 2px solid #7faeec;
       background: transparent;
     }
@@ -231,7 +234,12 @@ p {
                 border-bottom: 1px dotted #bf3f3f;
               }
             }
-            p { margin: 0; font-size: 15px; }
+            p {
+              margin: 0; font-size: 15px;
+              strong {
+                color: #bf3f3f;
+              }
+            }
             .prev-slide {
               position: absolute;
               top: 23px;  left: -1px;
