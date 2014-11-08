@@ -70,6 +70,7 @@ $ ->
 
   form_warning = (message) ->
     $(".form-alerts").html "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button><span>" + message + "</span></div>"
+    slider.resetSize()
     return
 
   slider.resetSize()
@@ -114,15 +115,19 @@ $ ->
   $("#find-trainer-form").submit (ev) ->
     if $("#email").val() == "" or $("#activities").val() == ""
       form_warning("Please select at least one activity.")
-      slider.resetSize()
+      ev.preventDefault
+      return false
+    if $("#location").val() == ""
+      form_warning("Please select a neighborhood.")
       ev.preventDefault
       return false
     data =
       lead:
+        name: $("#name").val()
         email: $("#email").val()
         activities: $("#activities").val()
         objective: $("#objective").val()
-        pricepoint: $("#pricepoint").val()
+        location: $("#location").val()
         startdate: $("#startdate").val()
     $.ajax
       type: "POST"
