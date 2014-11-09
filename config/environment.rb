@@ -5,7 +5,7 @@ require File.expand_path('../application', __FILE__)
 Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
-  :user_name => 'monji',
+  :user_name => 'mightyapp',
   :password => 'm1ghtju$td3pl0y',
   :domain => 'mightyapp.co',
   :address => 'smtp.sendgrid.net',
