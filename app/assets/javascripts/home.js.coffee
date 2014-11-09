@@ -136,6 +136,15 @@ $ ->
       url: "/leads"
       success: (data, textStatus, jqXHR) =>
         slider.slide("next")
+        window._fbq = window._fbq or []
+        window._fbq.push [
+          "track"
+          "6019441127678"
+          {
+            value: "0.01"
+            currency: "USD"
+          }
+        ]
         if $(window).scrollTop() > $("#find-trainer-form").offset().top
           $("html,body").animate
             scrollTop: 80
