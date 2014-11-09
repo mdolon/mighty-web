@@ -21,7 +21,11 @@ class LeadsController < ApplicationController
 
   def create
     @lead = Lead.new(lead_params)
-    @lead.save
+    if @lead.save
+      LeadNotifier.lead_email(@lead).deliver
+    else
+      render :action => 'new'
+    end
     respond_with(@lead)
   end
 
