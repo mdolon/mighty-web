@@ -7,15 +7,15 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand.trackEvent{href: "/", data: {name: "Clicked logo in header"}}
+        %a.navbar-brand.trackEvent{href: root_url(), data: {name: "Clicked logo in header"}}
           = image_tag("logo-md.png", class: "logo hidden-xs")
           = image_tag("logo-small.png", class: "logo-small visible-xs")
       #header-nav.collapse.navbar-collapse
         %button.btn.btn-default.navbar-btn.navbar-right.hidden-xs.trackEvent{type: "button", data: {name: "Clicked Sign In button"}} Sign in
         %ul.nav.navbar-nav.navbar-right
           %li
-            %a.trackEvent{:href => "#learn", data: {name: "Clicked How It Works"}} How It Works
+            %a.scroll-link.trackEvent{:href => "#learn", data: {name: "Clicked How It Works"}} How It Works
           %li
-            %a.trackEvent{:href => "#learn", data: {name: "Clicked Trainers link"}} Trainers
+            %a.scroll-link.trackEvent{:href => "#learn", data: {name: "Clicked Trainers link"}} Trainers
           %li.hidden-sm.hidden-md.hidden-lg
-            %a.trackEvent{:href => "#", data: {name: "Clicked Sign In link"}} Sign In
+            %a.scroll-link.trackEvent{:href => "#", data: {name: "Clicked Sign In link"}} Sign In
