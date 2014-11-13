@@ -1,0 +1,131 @@
+.slider-cont
+  .slide-wrap
+    .slide-strip
+      .slide.objective.current
+        .panel.lead-form
+          .panel-heading
+            %h4 Ready to find your coach?
+            %p
+              Tell us what you'd like to work on.
+              %br.visible-xs
+              %strong Your first session is free.
+          .panel-body
+            %h2 I want to:
+            %ul.list-unstyled
+              %li
+                = link_to "#", class: "panel objective-link trackEvent", data: {name: "Lose Weight", value: "lose-weight"} do
+                  .panel-body
+                    = image_tag("icon-scale.png")
+                    %h4 Lose Weight
+              %li
+                = link_to "#", class: "panel objective-link trackEvent", data: {name: "Get Toned", value: "get-toned"} do
+                  .panel-body
+                    = image_tag("icon-tone.png")
+                    %h4 Get Toned
+              %li
+                = link_to "#", class: "panel objective-link trackEvent", data: {name: "Get Stronger", value: "get-stronger"} do
+                  .panel-body
+                    = image_tag("icon-weights.png")
+                    %h4 Get Stronger
+              %li
+                = link_to "#", class: "panel objective-link trackEvent", data: {name: "Finish a Race", value: "finish-race"} do
+                  .panel-body
+                    = image_tag("icon-run.png")
+                    %h4 Finish a Race
+      .slide.personalize
+        .panel.lead-form
+          .panel-heading
+            = link_to "#", class: "prev-slide trackEvent", data: {name: "Back button on leadgen form"} do
+              = image_tag("icon-signup-back.png")
+            %h4
+              Great! You want to
+              %span
+            %p Now tell us a little about yourself
+          .panel-body
+            .form-alerts
+            %form#find-trainer-form{:role => "form"}
+              %input{type: "hidden", id: "objective", name: "objective"}
+              .row
+                .col-md-6
+                  .form-group
+                    %label{:for => "name"} What's your name?
+                    %input#name.form-control{placeholder: "First Last", type: "name", name: "name", required: "required"}
+                    %span.glyphicon.glyphicon-ok.form-control-feedback
+                .col-md-6
+                  .form-group
+                    %label{:for => "email"} What's your email address?
+                    %input#email.form-control{placeholder: "Enter email", type: "email", name: "email", required: "required"}
+                    %span.glyphicon.glyphicon-ok.form-control-feedback
+              / .form-group
+              /   %label{for: "price"} How much do you want to pay for this?
+              /   .row
+              /     .col-md-9.col-sm-9.col-xs-7
+              /       %input#pricepoint{"data-slider-id" => "price-slider", "data-slider-max" => "200", "data-slider-min" => "20", "data-slider-step" => "5", "data-slider-value" => "80", type: "text", name: "pricepoint"}
+              /     .col-md-3.col-sm-3.col-xs-5.no-padding-left
+              /       .price-update.badge
+              /         = raw("$<span class='price-input'>80</span>")
+              /         per session
+              /   %span.glyphicon.glyphicon-ok.form-control-feedback
+              .row
+                .col-md-6
+                  .form-group
+                    %label{:for => "location"} Where would you like to work out?
+                    %select#location.form-control
+                      %option{value: ""} Please select one
+                      %option Castro District
+                      %option Chinatown
+                      %option Cole Valley
+                      %option Financial District
+                      %option Fisherman's Wharf
+                      %option Haight-Ashbury
+                      %option Hayes Valley
+                      %option Japantown
+                      %option Lower Haight
+                      %option Marina
+                      %option Mission District
+                      %option Nob Hill
+                      %option Noe Valley
+                      %option North Beach
+                      %option Pacific Heights
+                      %option Panhandle
+                      %option Potrero Hill
+                      %option Presidio
+                      %option Richmond
+                      %option Russian Hill
+                      %option Sea Cliff
+                      %option Sixth Street
+                      %option SOMA
+                      %option Sunset
+                      %option Tenderloin
+                      %option Union Square
+                      %option Upper Market
+                    %span.glyphicon.glyphicon-ok.form-control-feedback
+                .col-md-6
+                  .form-group
+                    %label{:for => "start-date"} When can you start?
+                    .date-input
+                      %input#startdate.datepicker.form-control{placeholder: "Click to select", type: "text", name: "startdate", required: "required"}
+                      %span.glyphicon.glyphicon-calendar
+                    %span.glyphicon.glyphicon-ok.form-control-feedback
+              .row
+                .col-md-12
+                  .form-group
+                    %label{:for => "activities"} What activities do you enjoy?
+                    %input{type: "hidden", id: "activities", name: "activities"}
+                    .activities
+                      = link_to "Running", "#", class: "label label-default trackEvent", data: {name: "Clicked running"}
+                      = link_to "Swimming", "#", class: "label label-default trackEvent", data: {name: "Clicked swimming"}
+                      = link_to "Biking", "#", class: "label label-default trackEvent", data: {name: "Clicked biking"}
+                      = link_to "Yoga", "#", class: "label label-default trackEvent", data: {name: "Clicked yoga"}
+                      = link_to "Pilates", "#", class: "label label-default trackEvent", data: {name: "Clicked pilates"}
+                      = link_to "Crossfit", "#", class: "label label-default trackEvent", data: {name: "Clicked crossfit"}
+                      = link_to "Other", "#", class: "label label-default trackEvent", data: {name: "Clicked other"}
+
+              %button.btn.btn-submit.btn-success.btn-lg.trackEvent{type: "submit", data: {name: "Submitted leadgen form"}} Find My Coach &raquo;
+      .slide.finish
+        .panel.lead-form
+          .panel-body
+            = image_tag("icon-checkmark-big.png")
+            %h3 Sweet, we're on it!
+            %p.lead
+              We're hot on the search for your perfect trainer and can't wait for you to try out a <strong>free session</strong>. We will send you an email as soon as we've located them (usually within 24 hours).
