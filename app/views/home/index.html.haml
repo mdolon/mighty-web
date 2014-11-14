@@ -1,16 +1,69 @@
+.overlay
 .leadgen
   .container
     .splash-cont
       .promo
         %h1
-          Certified Trainers,
-          %br.phone-spacer
-          Affordable Rates
+          %span
+            Fitness Workouts
+            At Your Startup
         %p.lead
-          Find an expert personal trainer
-          %br.phone-spacer
-          that will help you reach your goals.
-      = render partial: "shared/slider_trainer"
+          %span
+            Promote a healthier, happier workplace
+            with in-office workouts once a week.
 
-= render partial: "shared/how_it_works"
-= render partial: "shared/testimonials"
+        = link_to "Learn More", "#learn", class: "scroll-link btn btn-lg btn-primary btn-default"
+.big-quote
+  .container
+    %blockquote
+      "...medical costs fall by about
+      %strong $3.27
+      for every dollar spent on wellness programs..."
+    %em
+      Workplace Wellness Programs Can Generate Savings<br/>
+      \- Katherine Baicker, David Cutler, and Zirui Song
+
+.how-it-works#learn
+  .container
+    %h2.title
+      %span How It Works
+    .row.feature
+      .col-md-4.col-md-push-8
+        = image_tag("icon-checklist.png", class: "icon")
+      .col-md-8.col-md-pull-4
+        %h3 1. Employees select this week's class
+        %p.big The Mighty app allows your employees to vote on the group fitness class for the week. Some class options include: Office Space Yoga, (re)Boot Camp and Passive Aggressive Pilates.
+    .row.feature
+      .col-md-4
+        = image_tag("icon-calendar.png", class: "icon")
+      .col-md-8
+        %h3 2. Sessions scheduled for each week
+        %p.big We schedule the fitness sessions on your company's preferred day and time, and handle all logistics involved with setting up and paying for the trainer. 
+    .row.feature
+      .col-md-4.col-md-push-8
+        = image_tag("icon-yoga.png", class: "icon")
+      .col-md-8.col-md-pull-4
+        %h3 3. Work out with your fitness instructor
+        %p.big Enjoy your workout either indoors in your office or outdoors when it's nice. Your instructor will provide all equipment needed and fresh towels to boot!
+
+.container
+  .panel.panel-default#request-info
+    .panel-heading
+      %h3 Request Info
+    .panel-body
+      %p.lead
+        %strong Mighty
+        is paving the way for startup wellness programs. If you'd like to learn more about the services we offer, or how to enroll, please provide your contact information below.
+
+        %form.form-inline{:role => "form", action: root_path, method: "GET"}
+          %input{type: "hidden", name: "type", value: "request_info"}
+          .form-group
+            %label.sr-only{:for => "name"} Name
+            %input#name.form-control{name: "name", :placeholder => "Name", :type => "text"}
+          .form-group
+            %label.sr-only{:for => "email"} Email
+            %input#email.form-control{name: "email", :placeholder => "Email", :type => "email"}
+          .form-group
+            %label.sr-only{:for => "phone"} Phone Number
+            %input#phone.form-control{name: "phone", :placeholder => "Phone Number", :type => "text"}
+          %button.btn.btn-success{:type => "submit"} Submit

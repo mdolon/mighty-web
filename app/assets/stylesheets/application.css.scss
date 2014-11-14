@@ -15,6 +15,8 @@
  *= require_self
  */
 
+$container-large-desktop: (940px + 30px);
+
 @import "compass";
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -24,7 +26,7 @@ $darker-color: #063e86;
 $brighter-color: #337dd0;
 
 body {
-  background: $primary-color image-url("bg-blue.png");
+  background: #fff image-url("bg-sharif.jpg") no-repeat center -80px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
@@ -56,9 +58,8 @@ p {
 #header {
   position: relative;
   overflow: hidden;
-  background: rgba(9,47,97,0.3);
   .navbar {
-    padding: 5px 0 0;  margin: 0;
+    padding: 25px 0 0;  margin: 0;
     background: none;  border-width: 0;
     #bgvid {
       display: block;
@@ -88,9 +89,9 @@ p {
         }
       }
       .navbar-toggle {
-        border-color: $darker-color;
+        border-color: rgba(255,255,255,0.8);
         &:hover, &:focus, &:active {
-          background-color: $darker-color;
+          background-color: transparent;
         }
         .icon-bar {
           background: #fff;
@@ -117,7 +118,7 @@ p {
         margin-left: 20px;
         background: none;
         border-width: 2px;
-        border-color: #5692bc;
+        border-color: rgba(255,255,255,0.8);
         text-transform: uppercase;
         font-size: 13px;
         &:hover {
@@ -127,44 +128,44 @@ p {
     }
   }
 }
-
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDA5OWNjIiBzdG9wLW9wYWNpdHk9IjAuNSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZjMTRkIiBzdG9wLW9wYWNpdHk9IjAuNSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(0,153,204,0.5)), color-stop(100%, rgba(255,193,77,0.5)));
+  background: -webkit-linear-gradient(-45deg, rgba(0,153,204,0.5) 0%, rgba(255,193,77,0.5) 100%);
+  background: -webkit-linear-gradient(315deg, rgba(0,153,204,0.5) 0%, rgba(255,193,77,0.5) 100%);
+  background: linear-gradient(135deg, rgba(0,153,204,0.5) 0%, rgba(255,193,77,0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#800099cc', endColorstr='#80ffc14d', GradientType=1 );
+}
 .leadgen {
-  padding: 40px 0;
+  padding: 200px 0 100px;
   overflow: hidden;
   .container {
     .splash-cont {
       position: relative;
-      max-width: 600px;
       margin: 0 auto;
       z-index: 2;
-      &:before, &:after {
-        @include opacity(0.7);
-        position: absolute;  top: 150px;
-        display: block;
-        content: ' ';
-        width: 256px;  height: 218px;        
-      }
-      &:before {
-        left: -200px;
-        background: image-url("bg-bicep-left.png") no-repeat;
-      }
-      &:after {
-        right: -200px;
-        background: image-url("bg-bicep-right.png") no-repeat;
-      }
     }
     > .row {
       padding-left: 60px;  padding-right: 60px;
     }
     .promo {
       color: #fff;
-      text-align: center;
       .big-spacer {
         min-height: 40px;
         width: 100%;
       }
+      h1, p {
+        @include text-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+      }
       h1 {
         margin: 0;
+        font-size: 40px;
       }
       h2.primary {
         @include border-radius(3px);
@@ -174,11 +175,8 @@ p {
       }
       p {
         margin-bottom: 20px;
-        font-size: 20px;
-        span {
-          border-bottom: 1px dotted #fff;
-          font-weight: bold;
-        }
+        font-size: 28px;
+        line-height: 28px;
       }
     }
     .slider-cont {
@@ -335,7 +333,7 @@ p {
 
 .how-it-works {
   position: relative;
-  padding: 60px 0 0;
+  padding: 60px 0 20px;
   background: #fff;
   .title {
     margin: 0 auto 60px;
@@ -344,16 +342,12 @@ p {
       border-bottom: 1px dashed #ccc;
     }
   }
-  .features {
-    text-align: center;
-    .feature-item {
-      margin-bottom: 60px;
+  .feature {
+    padding: 0 0 40px;
+    .col-md-4 {
       .icon {
         display: block;
-        width: 164px;  height: 164px;
-      }
-      p {
-        font-size: 16px;  line-height: 22px;
+        margin: 0 auto;
       }
     }
   }
@@ -476,6 +470,27 @@ p {
     -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
 }
+
+.big-quote {
+  position: relative;
+  background: #eaeaea;
+  text-align: center;
+  padding: 30px 0 40px;
+  z-index: 2;
+  blockquote {
+    margin: 0;
+    font-size: 22px;
+    border: none; background: none;
+  }
+}
+
+#request-info {
+  margin: 0 0 60px;
+  h2, h3 {
+    margin: 0;  padding: 5px 0;
+  }
+}
+
 @keyframes blink{
     0% { opacity:1; }
     50% { opacity:0; }
@@ -524,9 +539,9 @@ p {
     width: 100%;
   }
   .leadgen .container .promo {
-    h1 { font-size: 25px;  margin-bottom: 10px; }
+    h1 { font-size: 30px;  margin-bottom: 5px; }
     p {
-      font-size: 20px;  line-height: 22px;
+      font-size: 24px;  line-height: 26px;
     }
   }
   .phone-spacer { display: block; }
