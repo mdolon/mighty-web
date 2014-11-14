@@ -26,7 +26,6 @@ $darker-color: #063e86;
 $brighter-color: #337dd0;
 
 body {
-  background: #fff image-url("bg-sharif.jpg") no-repeat center -80px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
@@ -55,9 +54,14 @@ p {
 .no-padding-left { padding-left: 0; }
 .no-padding-right { padding-right: 0; }
 
+.header-cont {
+  position: relative;
+  background: #fff image-url("bg-sharif.jpg") no-repeat center -80px;
+}
 #header {
   position: relative;
   overflow: hidden;
+  z-index: 2;
   .navbar {
     padding: 25px 0 0;  margin: 0;
     background: none;  border-width: 0;
@@ -133,14 +137,14 @@ p {
   left: 0;
   right: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 0;
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDA5OWNjIiBzdG9wLW9wYWNpdHk9IjAuNSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZjMTRkIiBzdG9wLW9wYWNpdHk9IjAuNSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(0,153,204,0.5)), color-stop(100%, rgba(255,193,77,0.5)));
   background: -webkit-linear-gradient(-45deg, rgba(0,153,204,0.5) 0%, rgba(255,193,77,0.5) 100%);
   background: -webkit-linear-gradient(315deg, rgba(0,153,204,0.5) 0%, rgba(255,193,77,0.5) 100%);
   background: linear-gradient(135deg, rgba(0,153,204,0.5) 0%, rgba(255,193,77,0.5) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#800099cc', endColorstr='#80ffc14d', GradientType=1 );
+  z-index: 1;
 }
 .leadgen {
   padding: 200px 0 100px;
@@ -155,7 +159,9 @@ p {
       padding-left: 60px;  padding-right: 60px;
     }
     .promo {
+      position: relative;
       color: #fff;
+      z-index: 2;
       .big-spacer {
         min-height: 40px;
         width: 100%;
